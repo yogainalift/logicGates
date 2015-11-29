@@ -5,11 +5,27 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound"/>
-  <sprites name="sprites"/>
-  <backgrounds name="background"/>
+  <sprites name="sprites">
+    <sprite>sprites\spr_input</sprite>
+    <sprite>sprites\spr_output</sprite>
+    <sprite>sprites\sprite_wire_v</sprite>
+    <sprite>sprites\sprite_wire_h</sprite>
+  </sprites>
+  <backgrounds name="background">
+    <background>background\bg_00</background>
+  </backgrounds>
   <paths name="paths"/>
-  <objects name="objects"/>
-  <rooms name="rooms"/>
+  <scripts name="scripts"/>
+  <objects name="objects">
+    <object>objects\obj_wire</object>
+    <object>objects\obj_input</object>
+    <object>objects\obj_output</object>
+    <object>objects\obj_wire_v</object>
+    <object>objects\obj_wire_h</object>
+  </objects>
+  <rooms name="rooms">
+    <room>rooms\room_test</room>
+  </rooms>
   <help>
     <rtf>help.rtf</rtf>
   </help>
