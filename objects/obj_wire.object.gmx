@@ -60,7 +60,9 @@ else{
     enabled = false;
     if place_meeting(x,y, obj_wire) {
         obj_wire.enabled = false;
+        obj_wire.image_blend = make_colour_hsv(120, 240, 255);
     }
+    image_blend = make_colour_hsv(120, 240, 255);
 }
 </string>
           </argument>
