@@ -52,9 +52,15 @@
 if (other.output){
     image_blend = make_colour_hsv(random(255), 255, 255);
     enabled = true;
+    if place_meeting(x,y, obj_wire) {
+        obj_wire.enabled = true;
+    }
 }
-else {
+else{
     enabled = false;
+    if place_meeting(x,y, obj_wire) {
+        obj_wire.enabled = false;
+    }
 }
 </string>
           </argument>
@@ -79,10 +85,14 @@ else {
           <argument>
             <kind>1</kind>
             <string>/// waaw
+//if (!other.enabled){
+//    enabled = false;
+//}
 if (other.enabled){
     image_blend = make_colour_hsv(random(255), 255, 255);
     enabled = true;
 }
+
 </string>
           </argument>
         </arguments>

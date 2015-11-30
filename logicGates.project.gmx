@@ -15,7 +15,9 @@
     <background>background\bg_00</background>
   </backgrounds>
   <paths name="paths"/>
-  <scripts name="scripts"/>
+  <scripts name="scripts">
+    <script>scripts\scr_get_input.gml</script>
+  </scripts>
   <objects name="objects">
     <object>objects\obj_wire</object>
     <object>objects\obj_input</object>
