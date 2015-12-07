@@ -13,11 +13,6 @@
     <sprite>sprites\spr_AND</sprite>
     <sprite>sprites\temp</sprite>
     <sprite>sprites\spr_basic</sprite>
-    <sprite>sprites\spr_wire_straight</sprite>
-    <sprite>sprites\spr_wire_corner</sprite>
-    <sprite>sprites\spr_OR</sprite>
-    <sprite>sprites\spr_XOR</sprite>
-    <sprite>sprites\spr_NOT</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_00</background>
