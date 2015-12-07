@@ -64,22 +64,14 @@ if (input1 || input2){
         }
         instance_activate_all();
         //enable all in the list
-        var count = 0;
-        for(i=ds_map_find_first(wire);  count&lt;ds_map_size(wire); i=ds_map_find_next(wire,i)) {
-            i.enabled = true;
-            count += 1;
-        }
+        enable_wire(wire);
         changed = !changed;
     }
 } else {
     //set everything false again
     enabled = false; 
     if (changed){
-        var count = 0;
-        for(i=ds_map_find_first(wire); count&lt;ds_map_size(wire); i=ds_map_find_next(wire,i)) {
-            i.enabled = false;
-            count += 1;
-        }
+        disable_wire(wire);
         changed = !changed;
     }
 }

@@ -49,8 +49,7 @@ event_inherited();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// and gate logic
-
+            <string>/// AND gate logic
 event_inherited(); // hello from the other siiiide (parent's side)
 
 // if inputs enabled then
@@ -59,33 +58,21 @@ if (input1 &amp;&amp; input2){
         enabled = true; //enable the output
         instance_deactivate_object(in1);    //deactivate the two colliding wires
         instance_deactivate_object(in2);    //to create next list without those two
-        if (!flag){           
-            wire = fill_lists(self); //create next wire list
+        if (!flag){ //create next wire list only once
+            wire = fill_lists(self); 
             flag = !flag;
         }
-        instance_activate_all();
+        instance_activate_all(); // activate everything again
         //enable all in the list
-        var count = 0;
-        for(i=ds_map_find_first(wire); 
-            count&lt;ds_map_size(wire);
-            i=ds_map_find_next(wire,i)) {
-                i.enabled = true;
-                count += 1;
-        }
+        enable_wire(wire);
         changed = !changed;
     }
 } else {
     //set everything false again
     enabled = false; 
     if (changed){
-        var count = 0;
-        for(i=ds_map_find_first(wire); 
-            count&lt;ds_map_size(wire);
-            i=ds_map_find_next(wire,i)) {
-                i.enabled = false;
-                count += 1;
-        }
-    changed = !changed;
+        disable_wire(wire);
+        changed = !changed;
     }
 }
 </string>

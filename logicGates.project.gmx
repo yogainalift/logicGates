@@ -26,6 +26,8 @@
     <script>scripts\fill_lists.gml</script>
     <script>scripts\fill_lists_new.gml</script>
     <script>scripts\deactivate_collided.gml</script>
+    <script>scripts\enable_wire.gml</script>
+    <script>scripts\disable_wire.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_input</object>
