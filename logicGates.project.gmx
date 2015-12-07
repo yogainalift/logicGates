@@ -38,12 +38,13 @@
     <object>objects\obj_wire_v</object>
     <object>objects\obj_wire_h</object>
     <object>objects\obj_AND</object>
+    <object>objects\obj_AND_TEMP</object>
     <object>objects\obj_sq</object>
     <object>objects\obj_bi</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room_test</room>
     <room>rooms\room_2</room>
+    <room>rooms\room_test</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

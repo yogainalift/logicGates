@@ -28,7 +28,8 @@
             <string>///vars
 output = false;
 flag = false;
-nrOfInputs= 2;
+input1 = false;
+input2 = false;
 collidesWith = ds_map_create();
 </string>
           </argument>
