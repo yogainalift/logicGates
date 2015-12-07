@@ -67,7 +67,7 @@ if (!output){
 } 
 else {
     output = false;
-    image_blend = make_colour_hsv(160, 0, 181);
+    image_blend = make_colour_hsv(40, 240, 250);
     
   for(i=ds_map_find_first(wire); 
         count&lt;ds_map_size(wire);

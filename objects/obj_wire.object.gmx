@@ -54,7 +54,7 @@ if (enabled){
     image_blend = make_colour_hsv(random(255), 255,255);
 }
 else{
-    image_blend = make_colour_hsv(255, 240, 255);
+    image_blend = make_colour_hsv(120, 240, 255);
 }
 </string>
           </argument>
