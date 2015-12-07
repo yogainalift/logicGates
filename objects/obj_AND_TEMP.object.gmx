@@ -94,7 +94,7 @@ if (input1 &amp;&amp; input2){
        // with (inst3) instance_destroy()
     }
     
-    wire = fill_lists(inst);
+    wire = fill_lists(self);
     
     for(i=ds_map_find_first(wire); 
         count&lt;ds_map_size(wire);
