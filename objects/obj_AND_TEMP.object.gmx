@@ -31,6 +31,9 @@ flag = false;
 input1 = false;
 input2 = false;
 collidesWith = ds_map_create();
+changed = false;
+
+
 </string>
           </argument>
         </arguments>
@@ -55,56 +58,75 @@ collidesWith = ds_map_create();
             <kind>1</kind>
             <string>///hello
 //top left collision rect (GET REKT)
-if (!input1){
+//if (!input1){
     var x1 = x - sprite_width/2;
-    show_debug_message(x);
     var y1 = y - sprite_height/2;
     var x2 = x1 + 1;
-    var y2 = sprite_height/2 - 1;
-    
-    inst = collision_rectangle(x1, y1, x2, y2, obj_wire, false, true);
-    
-    if (inst != noone) {
-       input1 = true;
-    }
-}
+    var y2 = y - 1;
 
-//bottom left collision rect (GOT REKT)
-if (!input2){
+    in1 = collision_rectangle(x1, y1, x2, y2, obj_wire, false, true);
+  
+    if (in1 != noone) {
+        if (in1.enabled){
+            input1 = true;
+       }
+       else{
+            input1= false;
+       }
+    }
+//}
+
+//bottom left collision rect (GOT REKT biaatch)
+//if (!input2){
     var x1 = x - sprite_width/2;
     var y1 = y+1;
     var x2 = x1 + 1;
     var y2 = y + sprite_height/2;
     
-    inst2 = collision_rectangle(x1, y1, x2, y2, obj_wire, false, true);
+    in2 = collision_rectangle(x1, y1, x2, y2, obj_wire, false, true);
     
-    if (inst2 != noone){
-        input2 = true;
+    if (in2 != noone){
+        if (in2.enabled){
+            input2 = true;
+        } else{
+            input2= false;
+       }
     }
-}
-var count = 0;
+//}
+
 
 if (input1 &amp;&amp; input2){
-    enabled = true;
-    instance_deactivate_object(inst);
-    instance_deactivate_object(inst2);
-    
-    inst3 = instance_place(x,y,obj_wire);
-    if (inst3 != noone){
-       // with (inst3) instance_destroy()
+    if (!changed){
+        enabled = true;
+        instance_deactivate_object(in1);
+        instance_deactivate_object(in2);
+        
+        wire = fill_lists(self);
+        
+        var count = 0;
+        for(i=ds_map_find_first(wire); 
+            count&lt;ds_map_size(wire);
+            i=ds_map_find_next(wire,i)) {
+                i.enabled = true;
+                count += 1;
+        }
+        changed = !changed;
     }
-    
-    wire = fill_lists(self);
-    
-    for(i=ds_map_find_first(wire); 
-        count&lt;ds_map_size(wire);
-        i=ds_map_find_next(wire,i)) {
-            i.enabled = true;
-            count += 1;
-    }
-    
 } else {
+   // input1 = false;
+  //  input2 = false;
     enabled = false;
+    if (changed){
+        var count = 0;
+        for(i=ds_map_find_first(wire); 
+            count&lt;ds_map_size(wire);
+            i=ds_map_find_next(wire,i)) {
+                i.enabled = false;
+                count += 1;
+        }
+        changed = !changed;   
+    }
+
 }
 </string>
           </argument>
