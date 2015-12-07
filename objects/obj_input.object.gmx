@@ -51,31 +51,15 @@ wire = fill_lists(self);
           <argument>
             <kind>1</kind>
             <string>///set true on click
-var count;
-count = 0;
-
 if (!output){
     output = true;
     image_blend = make_colour_hsv(80, 240, 250);
-
-    for(i=ds_map_find_first(wire); 
-        count&lt;ds_map_size(wire);
-        i=ds_map_find_next(wire,i)) {
-            i.enabled = true;
-            count += 1;
-    } 
+    enable_wire(wire);
 } 
 else {
     output = false;
     image_blend = make_colour_hsv(40, 240, 250);
-    
-  for(i=ds_map_find_first(wire); 
-        count&lt;ds_map_size(wire);
-        i=ds_map_find_next(wire,i)) {
-            i.enabled = false;
-            count += 1;
-    } 
-    
+    disable_wire(wire);
 }
 </string>
           </argument>

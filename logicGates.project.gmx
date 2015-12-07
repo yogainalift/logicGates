@@ -6,43 +6,34 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\spr_input</sprite>
-    <sprite>sprites\spr_output</sprite>
     <sprite>sprites\sprite_wire_v</sprite>
     <sprite>sprites\sprite_wire_h</sprite>
+    <sprite>sprites\spr_basic</sprite>
+    <sprite>sprites\temp</sprite>
+    <sprite>sprites\spr_input</sprite>
+    <sprite>sprites\spr_output</sprite>
     <sprite>sprites\spr_AND</sprite>
     <sprite>sprites\spr_OR</sprite>
-    <sprite>sprites\temp</sprite>
-    <sprite>sprites\spr_basic</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_00</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\scr_get_input.gml</script>
-    <script>scripts\collision_check.gml</script>
-    <script>scripts\output_group.gml</script>
     <script>scripts\fill_lists.gml</script>
-    <script>scripts\fill_lists_new.gml</script>
-    <script>scripts\deactivate_collided.gml</script>
     <script>scripts\enable_wire.gml</script>
     <script>scripts\disable_wire.gml</script>
   </scripts>
   <objects name="objects">
-    <object>objects\obj_input</object>
     <object>objects\obj_wire</object>
-    <object>objects\obj_output</object>
-    <object>objects\obj_wire_v</object>
-    <object>objects\obj_wire_h</object>
-    <object>objects\obj_AND</object>
     <object>objects\obj_gate</object>
+    <object>objects\obj_input</object>
+    <object>objects\obj_output</object>
     <object>objects\obj_sq</object>
-    <object>objects\obj_bi</object>
+    <object>objects\obj_AND</object>
     <object>objects\obj_OR</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room_2</room>
     <room>rooms\room_test</room>
   </rooms>
   <help>
