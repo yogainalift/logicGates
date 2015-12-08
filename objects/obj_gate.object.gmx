@@ -31,6 +31,13 @@ input1 = false; // first input (top-left)
 input2 = false; // second input (bottom-left)
 changed = false; //to be used for optimizations
 flag = false; // flag for not recalculating the hashmap
+// drag gate things
+grab = false;  // flag for mouseL pressed
+xx = 0;
+yy = 0;
+setX = x;  // store initial x
+setY = y;  // store initial y
+
 
 </string>
           </argument>
@@ -96,6 +103,102 @@ flag = false; // flag for not recalculating the hashmap
        }
     }
 //}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// drag
+if (grab == false)
+{
+    exit;
+}
+else
+{
+    x = mouse_x + xx;
+    y = mouse_y + yy
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///grab
+grab = false;
+// if the gate collides with the object make it stay there
+if (place_meeting(x,y,obj_box))
+{
+    // get the instance number to get the object's position
+    inst = instance_place(x, y, obj_box)
+    x = inst.x;
+    y = inst.y;
+}
+else
+{
+    x = setX;  // return to initial pos
+    y = setY;  // return to initial pos
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///drag
+grab = true;
+depth = -1;
+
+//get relative click position
+xx = x - mouse_x;
+yy = y - mouse_y;
 </string>
           </argument>
         </arguments>

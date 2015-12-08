@@ -14,6 +14,7 @@
     <sprite>sprites\spr_output</sprite>
     <sprite>sprites\spr_AND</sprite>
     <sprite>sprites\spr_OR</sprite>
+    <sprite>sprites\spr_box</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_00</background>
@@ -32,8 +33,10 @@
     <object>objects\obj_sq</object>
     <object>objects\obj_AND</object>
     <object>objects\obj_OR</object>
+    <object>objects\obj_box</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\room1</room>
     <room>rooms\room_test</room>
   </rooms>
   <help>
