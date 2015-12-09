@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>depth=1;
+object_inside = 0; //no object
 </string>
           </argument>
         </arguments>
