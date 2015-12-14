@@ -19,9 +19,39 @@
     <sprite>sprites\spr_NOR</sprite>
     <sprite>sprites\sprite10</sprite>
     <sprite>sprites\spr_box</sprite>
+    <sprite>sprites\spr_wire_v_off</sprite>
+    <sprite>sprites\spr_wire_v_on</sprite>
+    <sprite>sprites\spr_wire_h_off</sprite>
+    <sprite>sprites\spr_wire_h_on</sprite>
+    <sprite>sprites\spr_wire_corner_1_off</sprite>
+    <sprite>sprites\spr_wire_corner_1_on</sprite>
+    <sprite>sprites\spr_wire_corner_2_off</sprite>
+    <sprite>sprites\spr_wire_corner_2_on</sprite>
+    <sprite>sprites\spr_wire_corner_3_off</sprite>
+    <sprite>sprites\spr_wire_corner_3_on</sprite>
+    <sprite>sprites\spr_wire_corner_4_off</sprite>
+    <sprite>sprites\spr_wire_corner_4_on</sprite>
+    <sprite>sprites\spr_gate_AND_00</sprite>
+    <sprite>sprites\spr_gate_AND_01</sprite>
+    <sprite>sprites\spr_gate_AND_10</sprite>
+    <sprite>sprites\spr_gate_AND_11</sprite>
+    <sprite>sprites\spr_gate_OR_00</sprite>
+    <sprite>sprites\spr_gate_OR_01</sprite>
+    <sprite>sprites\spr_gate_OR_10</sprite>
+    <sprite>sprites\spr_gate_OR_11</sprite>
+    <sprite>sprites\spr_gate_XOR_00</sprite>
+    <sprite>sprites\spr_gate_XOR_01</sprite>
+    <sprite>sprites\spr_gate_XOR_10</sprite>
+    <sprite>sprites\spr_gate_XOR_11</sprite>
+    <sprite>sprites\spr_gate_NOT_0_on</sprite>
+    <sprite>sprites\spr_gate_NOT_1_off</sprite>
+    <sprite>sprites\spr_input_off</sprite>
+    <sprite>sprites\spr_input_on</sprite>
+    <sprite>sprites\spr_character</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_00</background>
+    <background>background\bg_room</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
