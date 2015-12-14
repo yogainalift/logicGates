@@ -29,6 +29,9 @@
     <script>scripts\enable_wire.gml</script>
     <script>scripts\disable_wire.gml</script>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\Arcade</font>
+  </fonts>
   <objects name="objects">
     <object>objects\obj_wire</object>
     <object>objects\obj_gate</object>
@@ -42,6 +45,15 @@
     <object>objects\obj_XOR</object>
     <object>objects\obj_NOT</object>
     <object>objects\obj_box</object>
+    <objects name="InGameGUI">
+      <object>objects\obj_score</object>
+      <object>objects\obj_gui_and</object>
+      <object>objects\obj_gui_or</object>
+      <object>objects\obj_gui_xor</object>
+      <object>objects\obj_level</object>
+      <object>objects\obj_initgui</object>
+      <object>objects\obj_countup_score</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_test</room>
