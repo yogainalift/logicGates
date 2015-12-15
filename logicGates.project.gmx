@@ -72,6 +72,12 @@
     <object>objects\obj_XOR</object>
     <object>objects\obj_NOT</object>
     <object>objects\obj_box</object>
+    <object>objects\obj_wire_v</object>
+    <object>objects\obj_wire_h</object>
+    <object>objects\obj_wire_c1</object>
+    <object>objects\obj_wire_c2</object>
+    <object>objects\obj_wire_c3</object>
+    <object>objects\obj_wire_c4</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_test</room>
