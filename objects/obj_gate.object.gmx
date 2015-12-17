@@ -137,6 +137,30 @@ else
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="obj_gate">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>x = setX;  // return to initial pos
+y = setY;  // return to initial pos
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="6" enumb="7">
       <action>
         <libid>1</libid>
@@ -157,7 +181,7 @@ else
             <string>grab = false;
 // if the gate collides with the object make it stay there
 inst = instance_place(x, y, obj_box);
-if (inst != noone)
+if (inst != noone) &amp;&amp; (!place_meeting(x, y, obj_gate)) //&amp;&amp; (!position_meeting(x, y, obj_gate))//&amp;&amp; (global.object_inside == 0)
 {
     // get the instance number to get the object's position
     x = inst.x;
