@@ -39,7 +39,6 @@ yy = 0;
 setX = x;  // store initial x
 setY = y;  // store initial y
 
-
 </string>
           </argument>
         </arguments>
@@ -65,14 +64,14 @@ setY = y;  // store initial y
             <string>///basic gate collision and output logic
 //top left collision rect (GET REKT)
 //if (!input1){
+    
     // set up the top left rectangle 
     var x1 = x - sprite_width/2;
-    var y1 = y - sprite_height/2;
+    var y1 = y - sprite_height/2 ;
     var x2 = x1 + 1;
-    var y2 = y - 1;
+    var y2 = y - 5;
     //check for collision with obj_wire
     in1 = collision_rectangle(x1, y1, x2, y2, obj_wire, false, true);
-    
     //if there is a collision then make tag input1 as true else false
     if (in1 != noone) {
         if (in1.enabled){
@@ -86,16 +85,15 @@ setY = y;  // store initial y
 
 //bottom left collision rect (GOT REKT biaatch)
 //if (!input2){
-    // set up the btm left rectangle 
+    // set up the btm left rectangle
     var x1 = x - sprite_width/2;
-    var y1 = y+1;
+    var y1 = y+5;
     var x2 = x1 + 1;
     var y2 = y + sprite_height/2;
-    
     //check for collision with obj_wire
     in2 = collision_rectangle(x1, y1, x2, y2, obj_wire, false, true);
     
-        //if there is a collision then make tag input2 as true else false
+    //if there is a collision then make tag input2 as true else false
     if (in2 != noone){
         if (in2.enabled){
             input2 = true;

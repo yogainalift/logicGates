@@ -12,6 +12,7 @@
     <sprite>sprites\spr_wire_h</sprite>
     <sprite>sprites\spr_wire_tr</sprite>
     <sprite>sprites\spr_wire_corner_2_off</sprite>
+    <sprite>sprites\spr_gate_AND_00_old</sprite>
     <sprite>sprites\spr_wire_corner_2_on</sprite>
     <sprite>sprites\spr_wire_corner_bl</sprite>
     <sprite>sprites\spr_wire_corner_4_off</sprite>
@@ -66,9 +67,7 @@
     <object>objects\obj_output</object>
     <object>objects\obj_sq</object>
     <object>objects\obj_AND</object>
-    <object>objects\obj_NAND</object>
     <object>objects\obj_OR</object>
-    <object>objects\obj_NOR</object>
     <object>objects\obj_XOR</object>
     <object>objects\obj_NOT</object>
     <object>objects\obj_box</object>
@@ -85,10 +84,15 @@
       <object>objects\obj_initgui</object>
       <object>objects\obj_countup_score</object>
     </objects>
+    <objects name="OLD">
+      <object>objects\obj_NOR</object>
+      <object>objects\obj_NAND</object>
+    </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room_test</room>
     <room>rooms\test2</room>
+    <room>rooms\room3</room>
+    <room>rooms\room_test</room>
     <room>rooms\room1</room>
   </rooms>
   <help>

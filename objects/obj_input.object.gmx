@@ -27,9 +27,11 @@
             <kind>1</kind>
             <string>///init 
 output = false;
-image_index = 0;
+image_index = 1;
+image_blend = make_colour_hsv(255, 240, 250);
 image_speed = 0;
 wire = fill_lists(self);
+global.p_x = 0;
 global.p_y = 0;
 </string>
           </argument>
@@ -59,12 +61,17 @@ if (!output){
     image_index = 0;
     image_blend = make_colour_hsv(80, 240, 250);
     enable_wire(wire);
+    object_exists(obj_player);
+    obj_player.y = y-20;
+    obj_player.x = x-45;
 } 
 else {
     output = false;
     image_index = 1;
-    image_blend = make_colour_hsv(40, 240, 250);
+   image_blend = make_colour_hsv(255, 240, 250);
     disable_wire(wire);
+    obj_player.y = y-20;
+    obj_player.x = x-45;
 }
 
 </string>
