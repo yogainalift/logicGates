@@ -6,29 +6,14 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\sprite_wire_v</sprite>
-    <sprite>sprites\sprite_wire_h</sprite>
-    <sprite>sprites\spr_basic</sprite>
-    <sprite>sprites\temp</sprite>
-    <sprite>sprites\spr_input</sprite>
     <sprite>sprites\spr_output</sprite>
-    <sprite>sprites\spr_AND</sprite>
-    <sprite>sprites\sprite11</sprite>
-    <sprite>sprites\spr_OR</sprite>
-    <sprite>sprites\spr_XOR</sprite>
-    <sprite>sprites\spr_NOR</sprite>
-    <sprite>sprites\sprite10</sprite>
     <sprite>sprites\spr_box</sprite>
-    <sprite>sprites\spr_wire_v_off</sprite>
-    <sprite>sprites\spr_wire_v_on</sprite>
-    <sprite>sprites\spr_wire_h_off</sprite>
-    <sprite>sprites\spr_wire_h_on</sprite>
-    <sprite>sprites\spr_wire_corner_1_off</sprite>
-    <sprite>sprites\spr_wire_corner_1_on</sprite>
+    <sprite>sprites\spr_wire_v</sprite>
+    <sprite>sprites\spr_wire_h</sprite>
+    <sprite>sprites\spr_wire_tr</sprite>
     <sprite>sprites\spr_wire_corner_2_off</sprite>
     <sprite>sprites\spr_wire_corner_2_on</sprite>
-    <sprite>sprites\spr_wire_corner_3_off</sprite>
-    <sprite>sprites\spr_wire_corner_3_on</sprite>
+    <sprite>sprites\spr_wire_corner_bl</sprite>
     <sprite>sprites\spr_wire_corner_4_off</sprite>
     <sprite>sprites\spr_wire_corner_4_on</sprite>
     <sprite>sprites\spr_gate_AND_00</sprite>
@@ -45,9 +30,21 @@
     <sprite>sprites\spr_gate_XOR_11</sprite>
     <sprite>sprites\spr_gate_NOT_0_on</sprite>
     <sprite>sprites\spr_gate_NOT_1_off</sprite>
-    <sprite>sprites\spr_input_off</sprite>
-    <sprite>sprites\spr_input_on</sprite>
+    <sprite>sprites\spr_input</sprite>
     <sprite>sprites\spr_character</sprite>
+    <sprites name="old">
+      <sprite>sprites\spr_NOR_old</sprite>
+      <sprite>sprites\spr_basic_old</sprite>
+      <sprite>sprites\sprite_wire_h_old</sprite>
+      <sprite>sprites\sprite_wire_v_old</sprite>
+      <sprite>sprites\spr_XOR_old</sprite>
+      <sprite>sprites\sprite10</sprite>
+      <sprite>sprites\spr_OR_old</sprite>
+      <sprite>sprites\sprite11</sprite>
+      <sprite>sprites\spr_input_old</sprite>
+      <sprite>sprites\spr_AND_old</sprite>
+      <sprite>sprites\temp</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_00</background>
@@ -75,6 +72,10 @@
     <object>objects\obj_XOR</object>
     <object>objects\obj_NOT</object>
     <object>objects\obj_box</object>
+    <object>objects\obj_player</object>
+    <object>objects\obj_wire_line</object>
+    <object>objects\obj_wire_tr</object>
+    <object>objects\obj_wire_bl</object>
     <objects name="InGameGUI">
       <object>objects\obj_score</object>
       <object>objects\obj_gui_and</object>
@@ -84,11 +85,10 @@
       <object>objects\obj_initgui</object>
       <object>objects\obj_countup_score</object>
     </objects>
-    <object>objects\obj_player</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\test2</room>
     <room>rooms\room_test</room>
+    <room>rooms\test2</room>
     <room>rooms\room1</room>
   </rooms>
   <help>

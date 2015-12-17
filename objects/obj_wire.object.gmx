@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>///init enabled=false
 enabled = false;
+image_speed = 0;
 </string>
           </argument>
         </arguments>
@@ -51,10 +52,12 @@ enabled = false;
             <kind>1</kind>
             <string>///if enabled then light up
 if (enabled){
+    image_index = 1;
     image_blend = make_colour_hsv(random(255), 255,255);
 }
 else{
-    image_blend = make_colour_hsv(120, 240, 255);
+    image_index = 0;
+    image_blend = make_colour_hsv(255, 255,255);
 }
 </string>
           </argument>
