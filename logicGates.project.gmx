@@ -90,9 +90,9 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\test2</room>
-    <room>rooms\room3</room>
     <room>rooms\room_test</room>
+    <room>rooms\room3</room>
+    <room>rooms\test2</room>
     <room>rooms\room1</room>
   </rooms>
   <help>

@@ -49,7 +49,7 @@ event_inherited();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///OR gate logic
+            <string>///NOT gate logic
 event_inherited(); // hello from the other siiiide (parent's side)
 
 // if one of the inputs enabled then
