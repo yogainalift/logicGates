@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///variable initialization
+//gate stuff
 output = false; //output value
 input1 = false; // first input (top-left)
 input2 = false; // second input (bottom-left)
@@ -39,6 +40,7 @@ yy = 0;
 setX = x;  // store initial x
 setY = y;  // store initial y
 
+inBox = 0; // id of the box this gate is in, used for swapping gates with another box
 </string>
           </argument>
         </arguments>
@@ -137,30 +139,6 @@ else
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_gate">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>x = setX;  // return to initial pos
-y = setY;  // return to initial pos
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="6" enumb="7">
       <action>
         <libid>1</libid>
@@ -178,101 +156,85 @@ y = setY;  // return to initial pos
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>grab = false;
-// if the gate collides with the object make it stay there
-inst = instance_place(x, y, obj_box);
-if (inst != noone) &amp;&amp; (!place_meeting(x, y, obj_gate)) //&amp;&amp; (!position_meeting(x, y, obj_gate))//&amp;&amp; (global.object_inside == 0)
-{
-    // get the instance number to get the object's position
-    x = inst.x;
-    y = inst.y;
-}
-else
-{
-    x = setX;  // return to initial pos
-    y = setY;  // return to initial pos
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///grab trying stuff that did not work
-/*
+            <string>///position settings
 grab = false;
-depth= -10;
-// if the gate collides with the object make it stay there
-box_inst = instance_place(x, y, obj_box);
-gate_inst = instance_place(x,y,obj_gate);
-if (box_inst != noone){
-    x = box_inst.x;
-    y = box_inst.y;
+
+if (inBox == 0){ //was not in  a box
+    inst = instance_place(x, y, obj_box);
     
-    if (box_inst.object_inside == 0){
-        box_inst.object_inside = self.id;
-        show_debug_message("inside me: "+ string(self.id));
+    if (inst == noone){ //does not collide with box
+        x = setX;  // return to initial pos
+        y = setY;  // return to initial pos
     }
+    
+    else{ //collides with box
+        if (inst.object_inside != 0){
+            with (inst.object_inside){
+                x = setX;
+                y = setY;
+                inBox = 0;
+            }
+        }
+        else {
+            inst.object_inside = self.id;
+        }
+        
+        x = inst.x;
+        y = inst.y;
+    
+        inst.object_inside = self.id;
+        
+        inBox = inst.id; //the gate is inside this box
+    }
+}
+//if was previously in a box
+else{
+    inst = instance_place(x, y, obj_box);
+    
+    //and now is outside a box
+    if (inst == noone){
+        x = setX;  // return to initial pos
+        y = setY;  // return to initial pos
+        
+        with (inBox){ //reset all values
+            object_inside = 0;
+        }
+        inBox = 0;
+    }
+    
+    //and is again inside a box
     else{
-        with(box_inst.object_inside){
-            x = setX;  
-            y = setY; 
+        //if in the box there is allready a gate
+        if (inst.object_inside != 0){
+            var tempInBox = inBox;
+            with (inst.object_inside){
+                //set the object in the new box to the old box position.
+                x = tempInBox.x;
+                y = tempInBox.y;
+                inBox = tempInBox;
+                tempInBox.onbject_inside = self.id;
+            }
         }
-        with (gate_inst){
-           
-            show_debug_message("is false should send back bitch");
-        }
-    }    
-}
-if (gate_inst &gt; 0 ){
-    
-}
-
-/*
-in1 = collision_rectangle(x-20, y-27, x+20, y+27, obj_box, false, true);
-if (in1!= noone){
-    show_debug_message("hello you bitch");
-}
-
-
-
-if (gate_inst != noone){
-
-    instance_deactivate_object(gate_inst);
-    box_inst = instance_place(x, y, obj_box);
-    if (box_inst != noone){
-        // get the instance number to get the object's position
-        x = box_inst.x;
-        y = box_inst.y;
-        instance_activate_all();
-        with (gate_inst){
-            show_debug_message(x);
+        
+        //if the box is empty
+        else {
+        
+            inst.object_inside = self.id;
             
-            x = setX;  
-            y = setY;  
-            show_debug_message(x);
+            //reset old box to not hold any gate and update the new inBox value.
+            with (inBox){ 
+                object_inside = 0;  //maybe I can do just--------      inBox.object_inside = 0;
+            }
         }
+        
+        x = inst.x;
+        y = inst.y;
+                
+        inst.object_inside = self.id;
+
+        inBox = inst.id; //the gate is inside this box
     }
-    else {
-        x = setX;
-        y = setY;
-    }        
 }
-*/
 </string>
           </argument>
         </arguments>
@@ -298,10 +260,16 @@ if (gate_inst != noone){
             <string>///drag
 grab = true;
 depth = -20;
-
 //get relative click position
 xx = x - mouse_x;
 yy = y - mouse_y;
+
+
+//check if was allready in a box
+var inst = instance_place(x, y, obj_box);
+if (inst != noone){
+    inBox = inst.id;
+}
 </string>
           </argument>
         </arguments>
