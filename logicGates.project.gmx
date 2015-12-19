@@ -56,7 +56,6 @@
     <script>scripts\fill_lists.gml</script>
     <script>scripts\enable_wire.gml</script>
     <script>scripts\disable_wire.gml</script>
-    <script>scripts\set_position.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\Arcade</font>

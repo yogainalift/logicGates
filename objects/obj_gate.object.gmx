@@ -193,6 +193,7 @@ else{
     
     //and now is outside a box
     if (inst == noone){
+        show_debug_message("its me");
         x = setX;  // return to initial pos
         y = setY;  // return to initial pos
         
@@ -204,27 +205,39 @@ else{
     
     //and is again inside a box
     else{
+        
         //if in the box there is allready a gate
         if (inst.object_inside != 0){
+            
+        
+            inst.object_inside.x = inBox.x;
+            inst.object_inside.y = inBox.y;
+            inst.object_inside.inBox = inBox;
+            inst.object_inside.inBox.object_inside = inst.object_inside.id;
+            show_debug_message("object 2: "+string(inst.object_inside.inBox));
+            show_debug_message("object 2: "+string(inst.object_inside));
+            show_debug_message("object 2: "+string(inst.object_inside.id));
+            
+            
+            /*
             var tempInBox = inBox;
             with (inst.object_inside){
                 //set the object in the new box to the old box position.
                 x = tempInBox.x;
                 y = tempInBox.y;
                 inBox = tempInBox;
-                tempInBox.onbject_inside = self.id;
+                inBox.onbject_inside = self.id;
+                show_debug_message("its me 3");
             }
+            */
         }
         
         //if the box is empty
         else {
-        
-            inst.object_inside = self.id;
-            
             //reset old box to not hold any gate and update the new inBox value.
-            with (inBox){ 
-                object_inside = 0;  //maybe I can do just--------      inBox.object_inside = 0;
-            }
+            inst.object_inside = self.id;
+            inBox.object_inside = 0
+            show_debug_message("its me 4");
         }
         
         x = inst.x;
@@ -233,6 +246,9 @@ else{
         inst.object_inside = self.id;
 
         inBox = inst.id; //the gate is inside this box
+        show_debug_message("object 1: "+string(inBox));
+        show_debug_message("object 1: "+string(inst.object_inside));
+        show_debug_message("object 1: "+string(inst.object_inside.id));
     }
 }
 </string>
@@ -267,9 +283,14 @@ yy = y - mouse_y;
 
 //check if was allready in a box
 var inst = instance_place(x, y, obj_box);
-if (inst != noone){
+if (inst != noone &amp;&amp; inBox ==0){
     inBox = inst.id;
+    
+show_debug_message("inBox: "+string(inBox));
+show_debug_message("object inside box: "+string(inBox.object_inside));
+show_debug_message("self id: "+string(self.id));
 }
+
 </string>
           </argument>
         </arguments>
