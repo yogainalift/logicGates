@@ -25,7 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string> image_speed = 0.2;
+            <string>image_speed = 0.2;
+if (instance_find(obj_input,0)){   
+    y = obj_input.y-20;
+    x = obj_input.x-45;
+}
 </string>
           </argument>
         </arguments>

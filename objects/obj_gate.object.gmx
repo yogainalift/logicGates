@@ -32,6 +32,8 @@ input1 = false; // first input (top-left)
 input2 = false; // second input (bottom-left)
 changed = false; //to be used for optimizations
 flag = false; // flag for not recalculating the hashmap
+xchanged = x;
+ychanged = y;
 
 // drag gate things
 grab = false;  // flag for mouseL pressed
@@ -193,13 +195,13 @@ else{
     
     //and now is outside a box
     if (inst == noone){
-        show_debug_message("its me");
         x = setX;  // return to initial pos
         y = setY;  // return to initial pos
         
-        with (inBox){ //reset all values
-            object_inside = 0;
-        }
+        inBox.object_inside = 0;
+        //with (inBox){ //reset all values
+          //  object_inside = 0;
+        //}
         inBox = 0;
     }
     
@@ -209,15 +211,14 @@ else{
         //if in the box there is allready a gate
         if (inst.object_inside != 0){
             
-        
+            
+            
             inst.object_inside.x = inBox.x;
             inst.object_inside.y = inBox.y;
             inst.object_inside.inBox = inBox;
             inst.object_inside.inBox.object_inside = inst.object_inside.id;
-            show_debug_message("object 2: "+string(inst.object_inside.inBox));
-            show_debug_message("object 2: "+string(inst.object_inside));
-            show_debug_message("object 2: "+string(inst.object_inside.id));
-            
+            inst.object_inside.inBox.object_inside.flag = false;
+            inst.object_inside.flag = false;
             
             /*
             var tempInBox = inBox;
@@ -236,8 +237,7 @@ else{
         else {
             //reset old box to not hold any gate and update the new inBox value.
             inst.object_inside = self.id;
-            inBox.object_inside = 0
-            show_debug_message("its me 4");
+            inBox.object_inside = 0;
         }
         
         x = inst.x;
@@ -246,11 +246,10 @@ else{
         inst.object_inside = self.id;
 
         inBox = inst.id; //the gate is inside this box
-        show_debug_message("object 1: "+string(inBox));
-        show_debug_message("object 1: "+string(inst.object_inside));
-        show_debug_message("object 1: "+string(inst.object_inside.id));
     }
 }
+
+flag = false;
 </string>
           </argument>
         </arguments>
