@@ -32,8 +32,6 @@ input1 = false; // first input (top-left)
 input2 = false; // second input (bottom-left)
 changed = false; //to be used for optimizations
 flag = false; // flag for not recalculating the hashmap
-xchanged = x;
-ychanged = y;
 
 // drag gate things
 grab = false;  // flag for mouseL pressed
@@ -248,7 +246,10 @@ else{
         inBox = inst.id; //the gate is inside this box
     }
 }
-
+if (changed){
+    disable_wire(wire);
+    changed = !changed;
+}
 flag = false;
 </string>
           </argument>
