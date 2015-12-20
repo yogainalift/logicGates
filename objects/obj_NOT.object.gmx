@@ -50,14 +50,29 @@ event_inherited();
           <argument>
             <kind>1</kind>
             <string>///NOT gate logic
-event_inherited(); // hello from the other siiiide (parent's side)
 
-// if one of the inputs enabled then
+// set up the collision rectangle
+var x1 = x - sprite_width/2;
+var y1 = y - 5 ;
+var x2 = x1 + 1;
+var y2 = y + 5;
+//check for collision with obj_wire
+in1 = collision_rectangle(x1, y1, x2, y2, obj_wire, false, true);
+//if there is a collision then make tag input1 as true else false
+if (in1 != noone) {
+    if (in1.enabled){
+        input1 = true;
+   }
+   else{
+        input1= false;
+   }
+}
+
+
 if (!input1){
     if (!changed){ // for optimizations not being currently used but ok
         enabled = true; //enable the output
         instance_deactivate_object(in1);    //deactivate the two colliding wires
-        instance_deactivate_object(in2);    //to create next list without those two
         if (!flag){       
             wire = fill_lists(self); //create next wire list
             flag = !flag;
