@@ -33,6 +33,7 @@
     <sprite>sprites\spr_gate_NOT_1_off</sprite>
     <sprite>sprites\spr_input</sprite>
     <sprite>sprites\spr_character</sprite>
+    <sprite>sprites\spr_splash</sprite>
     <sprites name="old">
       <sprite>sprites\spr_NOR_old</sprite>
       <sprite>sprites\spr_basic_old</sprite>
@@ -88,6 +89,9 @@
       <object>objects\obj_NOR</object>
       <object>objects\obj_NAND</object>
     </objects>
+    <object>objects\obj_rain</object>
+    <object>objects\obj_splash</object>
+    <object>objects\obj_rain_generator</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_test</room>
