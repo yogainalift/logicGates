@@ -58,6 +58,9 @@
     <script>scripts\enable_wire.gml</script>
     <script>scripts\disable_wire.gml</script>
   </scripts>
+  <shaders name="shaders">
+    <shader type="GLSLES">shaders\shader0.shader</shader>
+  </shaders>
   <fonts name="fonts">
     <font>fonts\Arcade</font>
   </fonts>
@@ -92,6 +95,7 @@
     <object>objects\obj_rain</object>
     <object>objects\obj_splash</object>
     <object>objects\obj_rain_generator</object>
+    <object>objects\obj_lightning</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_test</room>
