@@ -168,7 +168,7 @@ if (enabled) {
     draw_surface(application_surface, 0, 0);
     shader_reset();
 }
-draw_text(16,16,"Enabled: "+string(enabled));
+//draw_text(16,16,"Enabled: "+string(enabled));
 </string>
           </argument>
         </arguments>

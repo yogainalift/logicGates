@@ -81,6 +81,7 @@
     <instance objName="obj_wire_line" x="304" y="192" name="inst_B5BE86C5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_OR" x="352" y="176" name="inst_1D60F2F1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wire_line" x="432" y="240" name="inst_1F7AF7F0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="level_settings" x="64" y="64" name="inst_F3555181" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
