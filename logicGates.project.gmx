@@ -11,32 +11,34 @@
     <sound>sound\bgm_other</sound>
   </sounds>
   <sprites name="sprites">
+    <sprites name="gates">
+      <sprite>sprites\spr_gate_AND_00_old</sprite>
+      <sprite>sprites\spr_gate_AND_01</sprite>
+      <sprite>sprites\spr_gate_AND_00</sprite>
+      <sprite>sprites\spr_gate_AND_10</sprite>
+      <sprite>sprites\spr_gate_AND_11</sprite>
+      <sprite>sprites\spr_gate_OR_00</sprite>
+      <sprite>sprites\spr_gate_OR_01</sprite>
+      <sprite>sprites\spr_gate_OR_10</sprite>
+      <sprite>sprites\spr_gate_OR_11</sprite>
+      <sprite>sprites\spr_gate_XOR_00</sprite>
+      <sprite>sprites\spr_gate_XOR_01</sprite>
+      <sprite>sprites\spr_gate_XOR_10</sprite>
+      <sprite>sprites\spr_gate_XOR_11</sprite>
+      <sprite>sprites\spr_gate_NOT_0_on</sprite>
+      <sprite>sprites\spr_gate_NOT_1_off</sprite>
+    </sprites>
+    <sprites name="wires">
+      <sprite>sprites\spr_wire_br</sprite>
+      <sprite>sprites\spr_wire_h</sprite>
+      <sprite>sprites\spr_wire_v</sprite>
+      <sprite>sprites\spr_wire_tr</sprite>
+      <sprite>sprites\spr_wire_bl</sprite>
+      <sprite>sprites\spr_wire_tl</sprite>
+    </sprites>
+    <sprite>sprites\spr_input</sprite>
     <sprite>sprites\spr_output</sprite>
     <sprite>sprites\spr_box</sprite>
-    <sprite>sprites\spr_wire_v</sprite>
-    <sprite>sprites\spr_wire_h</sprite>
-    <sprite>sprites\spr_wire_tr</sprite>
-    <sprite>sprites\spr_wire_corner_2_off</sprite>
-    <sprite>sprites\spr_gate_AND_00_old</sprite>
-    <sprite>sprites\spr_wire_corner_2_on</sprite>
-    <sprite>sprites\spr_wire_corner_bl</sprite>
-    <sprite>sprites\spr_wire_corner_4_off</sprite>
-    <sprite>sprites\spr_wire_corner_4_on</sprite>
-    <sprite>sprites\spr_gate_AND_00</sprite>
-    <sprite>sprites\spr_gate_AND_01</sprite>
-    <sprite>sprites\spr_gate_AND_10</sprite>
-    <sprite>sprites\spr_gate_AND_11</sprite>
-    <sprite>sprites\spr_gate_OR_00</sprite>
-    <sprite>sprites\spr_gate_OR_01</sprite>
-    <sprite>sprites\spr_gate_OR_10</sprite>
-    <sprite>sprites\spr_gate_OR_11</sprite>
-    <sprite>sprites\spr_gate_XOR_00</sprite>
-    <sprite>sprites\spr_gate_XOR_01</sprite>
-    <sprite>sprites\spr_gate_XOR_10</sprite>
-    <sprite>sprites\spr_gate_XOR_11</sprite>
-    <sprite>sprites\spr_gate_NOT_0_on</sprite>
-    <sprite>sprites\spr_gate_NOT_1_off</sprite>
-    <sprite>sprites\spr_input</sprite>
     <sprite>sprites\spr_character</sprite>
     <sprite>sprites\spr_splash</sprite>
     <sprites name="old">
@@ -72,20 +74,36 @@
     <font>fonts\Arcade</font>
   </fonts>
   <objects name="objects">
-    <object>objects\obj_wire</object>
-    <object>objects\obj_gate</object>
+    <objects name="gates">
+      <object>objects\obj_gate</object>
+      <object>objects\obj_AND</object>
+      <object>objects\obj_OR</object>
+      <object>objects\obj_XOR</object>
+      <object>objects\obj_NOT</object>
+      <objects name="OLD">
+        <object>objects\obj_NOR</object>
+        <object>objects\obj_NAND</object>
+      </objects>
+    </objects>
+    <objects name="wires">
+      <object>objects\obj_wire</object>
+      <object>objects\obj_wire_line</object>
+      <object>objects\obj_wire_tr</object>
+      <object>objects\obj_wire_br</object>
+      <object>objects\obj_wire_bl</object>
+      <object>objects\obj_wire_tl</object>
+    </objects>
+    <objects name="rain-lightning">
+      <object>objects\obj_rain</object>
+      <object>objects\obj_lightning</object>
+      <object>objects\obj_rain_generator</object>
+      <object>objects\obj_splash</object>
+    </objects>
     <object>objects\obj_input</object>
     <object>objects\obj_output</object>
-    <object>objects\obj_sq</object>
-    <object>objects\obj_AND</object>
-    <object>objects\obj_OR</object>
-    <object>objects\obj_XOR</object>
-    <object>objects\obj_NOT</object>
     <object>objects\obj_box</object>
     <object>objects\obj_player</object>
-    <object>objects\obj_wire_line</object>
-    <object>objects\obj_wire_tr</object>
-    <object>objects\obj_wire_bl</object>
+    <object>objects\obj_menu</object>
     <objects name="InGameGUI">
       <object>objects\obj_score</object>
       <object>objects\obj_gui_and</object>
@@ -95,22 +113,23 @@
       <object>objects\obj_initgui</object>
       <object>objects\obj_countup_score</object>
     </objects>
-    <objects name="OLD">
-      <object>objects\obj_NOR</object>
-      <object>objects\obj_NAND</object>
-    </objects>
-    <object>objects\obj_rain</object>
-    <object>objects\obj_splash</object>
-    <object>objects\obj_rain_generator</object>
-    <object>objects\obj_lightning</object>
-    <object>objects\obj_menu</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\main_menu</room>
-    <room>rooms\room_test</room>
-    <room>rooms\room1</room>
-    <room>rooms\test2</room>
+    <room>rooms\room10</room>
+    <room>rooms\room9</room>
+    <room>rooms\room8</room>
+    <room>rooms\room7</room>
+    <room>rooms\room6</room>
+    <room>rooms\room5</room>
+    <room>rooms\room4</room>
     <room>rooms\room3</room>
+    <room>rooms\room2</room>
+    <room>rooms\room1</room>
+    <room>rooms\main_menu</room>
+    <rooms name="test">
+      <room>rooms\room_test_full</room>
+      <room>rooms\room_test_gate_swapping</room>
+    </rooms>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

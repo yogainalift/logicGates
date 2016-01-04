@@ -30,6 +30,10 @@ global.minutes = 0;
 global.hours = 0;
 
 global.countup = true; //true = timer starts, false = timer stops
+
+//set position
+x= view_wview/2 - 64;
+y= 10 ;
 </string>
           </argument>
         </arguments>
@@ -89,6 +93,7 @@ if (global.minutes == 60){
             <kind>1</kind>
             <string>draw_set_font(Arcade);
 draw_set_color(c_white);
+
 
 if (global.seconds &lt; 10) &amp;&amp; (global.minutes &lt; 10){
     draw_text(x, y, string(global.hours) + ":0" + 

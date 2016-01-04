@@ -20,6 +20,7 @@
   <width>34</width>
   <height>34</height>
   <frames>
-    <frame index="0">images\spr_wire_corner_2_on_0.png</frame>
+    <frame index="0">images\spr_wire_tl_0.png</frame>
+    <frame index="1">images\spr_wire_tl_1.png</frame>
   </frames>
 </sprite>
