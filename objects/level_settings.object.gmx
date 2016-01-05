@@ -50,7 +50,7 @@ else if (room == room6){
    set_input_true(2);
 }
 else if (room == room7){
-   set_input_true(2);
+   //set_input_true(1);   FOR SOME REASON THIS DOESNT WORK
 }
 else if (room == room8){
 
