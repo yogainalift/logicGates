@@ -25,9 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.iscomplete=false; //initialize level completeness variable  
+            <string>///nextlevel
 global.completecheck=false;
 global.iscompletesound=false; //play lvl complete sound
+checkNow = true;
 
 </string>
           </argument>
@@ -51,25 +52,24 @@ global.iscompletesound=false; //play lvl complete sound
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.iscompletesound==true){
-    global.completecheck=true;
-    global.iscompletesound=false;
-    
-    if !audio_is_playing(bgm_chime)
-    {
-        audio_play_sound(bgm_chime,1,false);
+            <string>if (instance_exists(obj_output) &amp;&amp; checkNow){
+    show_debug_message(global.count_of_enabled);
+    show_debug_message(instance_number(obj_output));
+    if (global.count_of_enabled == instance_number(obj_output)){
+        global.completecheck=true;
+        //global.iscompletesound=false;
+        if !audio_is_playing(bgm_chime){
+            audio_play_sound(bgm_chime,1,false);
+        }
+        
     }
-    
+    if (keyboard_check_pressed(vk_space) &amp;&amp; global.completecheck==true){
+        show_debug_message("pressed space");
+        global.completecheck=false;
+        global.count_of_enabled = 0;
+        room_goto_next();
+    }
 }
-
-if (keyboard_check_pressed(vk_space) &amp;&amp; global.iscomplete==true)
-{
-    show_debug_message("pressed space");
-    global.iscomplete=false;
-    global.completecheck=false;
-    room_goto_next();
-}
-
 
 </string>
           </argument>
@@ -93,7 +93,7 @@ if (keyboard_check_pressed(vk_space) &amp;&amp; global.iscomplete==true)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(global.iscomplete==true){
+            <string>if(global.completecheck==true){
     draw_set_color(c_black);
     draw_set_alpha(0.5);
     draw_rectangle(0,0,room_width,room_height,0);

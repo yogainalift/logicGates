@@ -76,7 +76,7 @@ if (room == room1){
             <kind>1</kind>
             <string>if (intensity &lt;= max_intensity){
     intensity +=increase_intesity_by;
-    show_debug_message("intensity increased" + string(intensity));
+    //show_debug_message("intensity increased" + string(intensity));
     alarm[0] = alarm_time;
     var roomname = room_get_name(room);
 }
@@ -102,8 +102,9 @@ if (room == room1){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.pause) exit;
-///generate rain
+            <string>///generate rain
+if (global.pause) exit;
+
 edge = 200;
 
 repeat (intensity){

@@ -63,8 +63,9 @@ inBox = 0; // id of the box this gate is in, used for swapping gates with anothe
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.pause) exit;
-///basic gate collision and output logic
+            <string>///basic gate collision and output logic
+if (global.pause) exit;
+
 //top left collision rect (GET REKT)
 //if (!input1){
     
@@ -125,8 +126,9 @@ inBox = 0; // id of the box this gate is in, used for swapping gates with anothe
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.pause) exit;
-/// drag
+            <string>/// drag
+if (global.pause) exit;
+
 if (grab == false)
 {
     exit;
@@ -287,10 +289,9 @@ yy = y - mouse_y;
 var inst = instance_place(x, y, obj_box);
 if (inst != noone &amp;&amp; inBox ==0){
     inBox = inst.id;
-    
-show_debug_message("inBox: "+string(inBox));
-show_debug_message("object inside box: "+string(inBox.object_inside));
-show_debug_message("self id: "+string(self.id));
+//  show_debug_message("inBox: "+string(inBox));
+//  show_debug_message("object inside box: "+string(inBox.object_inside));
+//  show_debug_message("self id: "+string(self.id));
 }
 
 </string>

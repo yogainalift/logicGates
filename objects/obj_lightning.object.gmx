@@ -58,7 +58,7 @@ intensity = 0;
 
 if (object_exists(obj_rain_generator)){
     intensity = obj_rain_generator.intensity;
-    show_debug_message(intensity);
+    //show_debug_message(intensity);
 } 
 
 alarm[0] = random_range(700,1500);
@@ -191,7 +191,7 @@ if (enabled) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>enabled = !enabled;
+            <string>//enabled = !enabled;
 </string>
           </argument>
         </arguments>
