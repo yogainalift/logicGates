@@ -63,7 +63,8 @@ inBox = 0; // id of the box this gate is in, used for swapping gates with anothe
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///basic gate collision and output logic
+            <string>if (global.pause) exit;
+///basic gate collision and output logic
 //top left collision rect (GET REKT)
 //if (!input1){
     
@@ -124,7 +125,8 @@ inBox = 0; // id of the box this gate is in, used for swapping gates with anothe
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// drag
+            <string>if (global.pause) exit;
+/// drag
 if (grab == false)
 {
     exit;

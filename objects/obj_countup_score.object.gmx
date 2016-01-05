@@ -56,7 +56,8 @@ y= 10 ;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.countup = true){
+            <string>if (global.pause) exit;
+if (global.countup = true){
     global.seconds += 1/room_speed;
 }
 

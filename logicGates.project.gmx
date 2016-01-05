@@ -9,6 +9,9 @@
     <sound>sound\bgm_ingame2</sound>
     <sound>sound\bgm_menu</sound>
     <sound>sound\bgm_other</sound>
+    <sound>sound\bgm_switch2</sound>
+    <sound>sound\bgm_switch1</sound>
+    <sound>sound\bgm_chime</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="gates">
@@ -119,6 +122,8 @@
       <object>objects\obj_level</object>
       <object>objects\obj_initgui</object>
       <object>objects\obj_countup_score</object>
+      <object>objects\obj_pause</object>
+      <object>objects\obj_nextlevel</object>
     </objects>
     <object>objects\level_settings</object>
   </objects>

@@ -50,7 +50,8 @@ image_speed = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///if enabled then light up
+            <string>if (global.pause) exit;
+///if enabled then light up
 if (enabled){
     image_index = 1;
     image_blend = make_colour_hsv(random(255), 255,255);

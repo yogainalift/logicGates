@@ -26,9 +26,12 @@
           <argument>
             <kind>1</kind>
             <string>///change color
-if (other.enabled){
+if (other.enabled &amp;&amp; global.completecheck==false){
     image_blend = make_colour_hsv(random(255), 255, 255);
+    global.iscomplete=true;
+    global.iscompletesound=true;
 }
+
 </string>
           </argument>
         </arguments>

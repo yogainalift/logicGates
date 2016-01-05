@@ -81,6 +81,30 @@ mpos = 0;
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>211</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_sound</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>6</kind>
+            <sound>bgm_ingame1</sound>
+          </argument>
+          <argument>
+            <kind>3</kind>
+            <string>1</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="3" enumb="0">
       <action>
@@ -99,7 +123,8 @@ mpos = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var move = 0;
+            <string>if (global.pause) exit;
+var move = 0;
 move -= max(keyboard_check_pressed(vk_up),keyboard_check_pressed(ord("W")),0);
 move += max(keyboard_check_pressed(vk_down),keyboard_check_pressed(ord("S")),0);
 

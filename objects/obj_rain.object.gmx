@@ -50,7 +50,8 @@ height = 40;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///destroy create
+            <string>if (global.pause) exit;
+///destroy create
 height-=1;
 
 if (height &lt;= 0){
