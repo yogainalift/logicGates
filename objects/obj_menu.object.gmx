@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>menu[0] = "Start Game"
-menu[1] = "Quit"
+//menu[1] = "Quit"
 
 space = 64;
 mpos = 0;
@@ -130,7 +130,7 @@ move += max(keyboard_check_pressed(vk_down),keyboard_check_pressed(ord("S")),0);
 
 mpos = (mpos + move + array_length_1d(menu)) % array_length_1d(menu);
 
-if (keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_enter))
+if (keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_enter)) || mouse_check_button_pressed(mb_left)
 {
     show_debug_message("pressed space or enter");
     scr_menu();
@@ -159,17 +159,21 @@ if (keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_enter))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_halign(fa_left);
+            <string>draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 draw_set_font(Arcade);
 draw_set_color(c_white);
-
+w=view_wview[0];
+h=view_hview[0];
 var m;
 for (m = 0; m &lt; array_length_1d(menu); m += 1)
 {
-    draw_text(x + space, y + (m * space),string(menu[m]));
+    draw_text_transformed(w/2,(h/2) + (h/6),string(menu[m]),3,3,0);
 }
-draw_sprite(sprite_index, 2, x + 16, y + mpos * space);
+draw_sprite(sprite_index, 2, (w/2)-250, (h/2) + (h/6));
+draw_set_halign(fa_center);
+draw_text(w/2,(h/2)+(2*(h/6)), "Left  click  to  Start");
+
 
 </string>
           </argument>

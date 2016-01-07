@@ -69,6 +69,7 @@
       <sprite>sprites\spr_AND_old</sprite>
       <sprite>sprites\temp</sprite>
     </sprites>
+    <sprite>sprites\spr_tue</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_00</background>
@@ -131,12 +132,13 @@
       <object>objects\obj_pause</object>
       <object>objects\obj_nextlevel</object>
       <object>objects\obj_countdown_score</object>
+      <object>objects\obj_tutorial</object>
     </objects>
     <object>objects\level_settings</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\main_menu</room>
-    <room>rooms\room_test_full</room>
+    <room>rooms\tutorial</room>
     <room>rooms\room1</room>
     <room>rooms\room2</room>
     <room>rooms\room3</room>
@@ -147,6 +149,7 @@
     <room>rooms\room8</room>
     <room>rooms\room9</room>
     <room>rooms\room10</room>
+    <room>rooms\room_test_full</room>
     <room>rooms\end_game</room>
     <rooms name="test">
       <room>rooms\room_test_gate_swapping</room>
