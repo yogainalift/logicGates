@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-20</depth>
+  <depth>0</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,19 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///nextlevel
-global.completecheck=false;
-global.iscompletesound=false; //play lvl complete sound
-checkNow = true;
-chimeenabled=true; //used to play lvl complete sound only once
-global.scoreon=true; //to enable the score to change
-
+            <string>score = 20000; //set score to 20.000
+alarm[0] = 30; //set alarm for 1 second
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -54,29 +49,10 @@ global.scoreon=true; //to enable the score to change
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (instance_exists(obj_output) &amp;&amp; checkNow){
-    show_debug_message(global.count_of_enabled);
-    show_debug_message(instance_number(obj_output));
-    if (global.count_of_enabled == instance_number(obj_output)){
-        global.completecheck=true; 
-        //global.iscompletesound=false;
-        if (!audio_is_playing(bgm_chime) &amp;&amp; chimeenabled==true){
-            audio_play_sound(bgm_chime,1,false);
-            chimeenabled=false;
-            global.scoreon=false;
-        }       
-    }
-    if (keyboard_check_pressed(vk_space) &amp;&amp; global.completecheck==true){
-        show_debug_message("pressed space");
-        global.completecheck=false;
-        global.count_of_enabled = 0;
-        chimeenabled = true;    
-        score=20000; //reset score
-        global.scoreon=true;
-        room_goto_next();    
-    }
+            <string>if(global.scoreon==true){
+    score -= 30;  //decrease score by 30    
 }
-
+alarm[0] = 30; //set alarm back to 1 second
 </string>
           </argument>
         </arguments>
@@ -99,23 +75,10 @@ global.scoreon=true; //to enable the score to change
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(global.completecheck==true){
-    draw_set_color(c_black);
-    draw_set_alpha(0.5);
-    draw_rectangle(0,0,room_width,room_height,0);
-    draw_set_halign(fa_center);
-    draw_set_font(Arcade);
-    draw_set_color(c_white);
-    draw_set_alpha(1);
-    w=view_wview[0];
-    h=view_hview[0];
-    draw_text(w/2,h/2+h/6, "Score  " + string(score));
-    draw_text_transformed(w/2, h/2+h/4, "Level Complete",2 ,2 ,image_angle);
-    draw_text(w/2,h/2+h/3, "Press  SPACE  to  go  to  the  next  Level");
-    draw_set_color(c_black);
-}
+            <string>draw_set_font(Arcade);
+draw_set_color(c_white);
 
-
+draw_text(50,10,score);  //draw the score at the coordinates 50,10
 </string>
           </argument>
         </arguments>
