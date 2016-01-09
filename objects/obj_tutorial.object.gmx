@@ -30,6 +30,7 @@
     show_debug_message("pressed space or enter or left click");
     audio_stop_all();
     audio_play_sound(bgm_ingame2,0,true);
+    audio_play_sound(bgm_button,1,false);
     room_goto_next();
 }
 </string>
