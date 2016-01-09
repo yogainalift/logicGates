@@ -36,7 +36,8 @@ x-=2;
 image_xscale *= 0.7;
 image_yscale *= 0.7;
 //instance_destroy();
-
+i = 0;
+destroyAnimation=0;
 </string>
           </argument>
         </arguments>

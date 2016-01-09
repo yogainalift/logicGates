@@ -64,8 +64,7 @@ inBox = 0; // id of the box this gate is in, used for swapping gates with anothe
           <argument>
             <kind>1</kind>
             <string>///basic gate collision and output logic
-if (global.pause) exit;
-
+if (global.pause||global.completecheck) exit;
 //top left collision rect (GET REKT)
 //if (!input1){
     
@@ -161,6 +160,7 @@ else
           <argument>
             <kind>1</kind>
             <string>///position settings
+if (global.pause||global.completecheck) exit;
 grab = false;
 
 if (inBox == 0){ //was not in  a box
@@ -278,6 +278,7 @@ flag = false;
           <argument>
             <kind>1</kind>
             <string>///drag
+if (global.pause||global.completecheck) exit;
 grab = true;
 depth = -20;
 //get relative click position

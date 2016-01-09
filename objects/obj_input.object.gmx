@@ -56,6 +56,7 @@ global.p_y = 0;
           <argument>
             <kind>1</kind>
             <string>///set true on click
+if (global.pause||global.completecheck) exit;
 if (!output){
     output = true;
     image_index = 0;

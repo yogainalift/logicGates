@@ -54,7 +54,8 @@ global.scoreon=true; //to enable the score to change
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (instance_exists(obj_output) &amp;&amp; checkNow){
+            <string>if (global.pause) exit;
+if (instance_exists(obj_output) &amp;&amp; checkNow){
     if (global.count_of_enabled == instance_number(obj_output)){
         global.completecheck=true; 
         //global.iscompletesound=false;

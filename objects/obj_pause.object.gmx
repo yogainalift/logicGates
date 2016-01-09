@@ -26,12 +26,26 @@
           <argument>
             <kind>1</kind>
             <string>global.pause = 0;
+depth= -9999909;
+mute = 0;
+
+draw_set_color(c_white);
+
+//gausian blur
+uni_resolution_hoz = shader_get_uniform(shader_gb_h,"resolution");
+uni_resolution_vert = shader_get_uniform(shader_gb_v,"resolution");
+var_resolution_x = view_wview;
+var_resolution_y = view_hview;
+
+shader_enabled = true;
+
+final_surface = surface_create(view_wview,view_hview);
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="5" enumb="27">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -48,12 +62,72 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.pause == 0){
-    global.pause = 1;
+            <string>///volume controler
+if (keyboard_check(vk_add)){
+   audio_set_master_gain(0, audio_get_master_gain(0)+ 0.01);
 }
-else {
-    global.pause = 0;
+else if (keyboard_check(vk_subtract)){
+   audio_set_master_gain(0, audio_get_master_gain(0)- 0.01);
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (global.pause) {
+
+//BLACK AND WHITE
+    shader_set(shader_bw);
+    //draw_background(bg_00,0,0);
+    draw_surface(application_surface, 0, 0);
+    shader_reset();
+}    
+
+//WAVE
+/*
+shader_set(shader_wave);
+shader_set_uniform_f( shader_get_uniform(shader_wave,"time"), 1);
+shader_set_uniform_f(shader_get_uniform(shader_wave,"mouse_pos"), mouse_x - view_xview, mouse_y - view_yview);
+shader_set_uniform_f(shader_get_uniform(shader_wave,"resolution"), view_wview, view_hview);
+shader_set_uniform_f(shader_get_uniform(shader_wave,"wave_amount"), 80);//higher = more waves
+shader_set_uniform_f(shader_get_uniform(shader_wave,"wave_distortion"), 40); //higher = less distortion
+shader_set_uniform_f(shader_get_uniform(shader_wave,"wave_speed"), 2.0); //higher = faster
+draw_surface(application_surface,0,0);
+shader_reset();
+*/
+//GAUSIAN BLUR
+    /*
+//Do horizontal blur first
+surface_set_target(final_surface);
+if shader_enabled shader_set(shader_gb_h);
+    shader_set_uniform_f(uni_resolution_hoz, var_resolution_x, var_resolution_y);
+    draw_surface(application_surface,0,0);
+shader_reset();
+surface_reset_target();
+
+//Do vertical blur last
+if shader_enabled shader_set(shader_gb_v);
+    shader_set_uniform_f(uni_resolution_vert, var_resolution_x, var_resolution_y);
+    draw_surface(final_surface,0,0);
+shader_reset();
+*/
 </string>
           </argument>
         </arguments>
@@ -77,6 +151,7 @@ else {
           <argument>
             <kind>1</kind>
             <string>if (global.pause){
+    
     draw_set_color(c_black);
     draw_set_alpha(0.5);
     draw_rectangle(0,0,room_width,room_height,0);
@@ -86,6 +161,76 @@ else {
     draw_set_alpha(1);
     draw_text(room_width/2, room_height/2, "Game Paused");
     draw_set_color(c_black);
+}
+
+if (mute){
+    draw_set_font(Arcade);
+    draw_set_color(c_white);
+    draw_set_alpha(1);
+    draw_text(room_width-60, room_height-20, "Muted");
+    draw_set_color(c_black);
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="10" enumb="77">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///mute
+if (!mute){
+   audio_set_master_gain(0,0);
+   mute = !mute;
+}
+else{
+   audio_set_master_gain(0,1);
+   mute = !mute;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="10" enumb="27">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (global.pause == 0){
+    global.pause = 1;
+    audio_pause_all();
+}
+else {
+    global.pause = 0;
+    audio_resume_all();
 }
 </string>
           </argument>

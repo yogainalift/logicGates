@@ -28,30 +28,20 @@
             <string>///settings of rain
 
 //NO RAIN, default values;
+/*
 intensity = 0;
 increase_intesity_by = 0;
 max_intensity = 0; //too many droplets
 alarm_time = 0; 
 alarm[0] = alarm_time;
-
+*/
 //specific room values
-if (room == room_test_full){
-    intensity = 0;
-    increase_intesity_by = 1;
-    max_intensity = 50; //too many droplets
+intensity = 0;
+increase_intesity_by = 1;
+max_intensity = 50; //too many droplets
     
-    alarm_time = 150; //5 seconds
-    alarm[0] = alarm_time;
-}
-
-if (room == room1){
-    intensity = 0;
-    increase_intesity_by = 1;
-    max_intensity = 50; //too many droplets
-    
-    alarm_time = 150; //5 seconds
-    alarm[0] = alarm_time;
-}
+alarm_time = 150; //5 seconds
+alarm[0] = alarm_time;
 </string>
           </argument>
         </arguments>
