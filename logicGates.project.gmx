@@ -38,6 +38,9 @@
     <sprite>sprites\spr_robot_destroy2</sprite>
     <sprite>sprites\spr_box</sprite>
     <sprite>sprites\spr_character</sprite>
+    <sprite>sprites\spr_character_creepier</sprite>
+    <sprite>sprites\spr_character_not_creepy</sprite>
+    <sprite>sprites\spr_character_walk</sprite>
     <sprite>sprites\spr_splash</sprite>
     <sprites name="gates_old">
       <sprite>sprites\spr_gate_AND_00_old</sprite>
