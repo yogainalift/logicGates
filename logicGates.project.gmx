@@ -37,6 +37,7 @@
     <sprite>sprites\spr_robot_destroy</sprite>
     <sprite>sprites\spr_robot_destroy2</sprite>
     <sprite>sprites\spr_box</sprite>
+    <sprite>sprites\spr_player_box</sprite>
     <sprite>sprites\spr_character</sprite>
     <sprite>sprites\spr_character_creepier</sprite>
     <sprite>sprites\spr_character_not_creepy</sprite>
@@ -130,12 +131,21 @@
       <object>objects\obj_rain_generator</object>
       <object>objects\obj_splash</object>
     </objects>
-    <object>objects\obj_input</object>
     <object>objects\obj_output</object>
     <object>objects\obj_box</object>
-    <object>objects\obj_player</object>
-    <object>objects\obj_menu</object>
+    <object>objects\obj_input</object>
+    <objects name="characters">
+      <object>objects\obj_player1</object>
+      <object>objects\obj_player2</object>
+      <object>objects\obj_select1</object>
+      <object>objects\obj_select2</object>
+      <object>objects\obj_player_selection</object>
+      <object>objects\obj_menu_select</object>
+      <object>objects\obj_player</object>
+      <object>objects\obj_player_box</object>
+    </objects>
     <objects name="InGameGUI">
+      <object>objects\obj_menu</object>
       <object>objects\obj_score</object>
       <object>objects\obj_gui_and</object>
       <object>objects\obj_gui_or</object>
@@ -152,7 +162,7 @@
     <object>objects\obj_robot</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\main_menu</room>
+    <room>rooms\main_menu_select</room>
     <room>rooms\tutorial</room>
     <room>rooms\room1</room>
     <room>rooms\room2</room>
@@ -166,6 +176,7 @@
     <room>rooms\room10</room>
     <room>rooms\room_test_full</room>
     <room>rooms\end_game</room>
+    <room>rooms\main_menu</room>
     <rooms name="test">
       <room>rooms\room_test_gate_swapping</room>
     </rooms>

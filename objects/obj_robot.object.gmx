@@ -87,6 +87,7 @@ else{
        }
        move_to_center(instance_find(obj_robot,0));
        with (instance_find(obj_robot,0)){
+            depth=-1001;
            if (!destroyAnimation){
                sprite_index = spr_robot_destroy;
                if (image_xscale &lt; 4){
@@ -96,7 +97,7 @@ else{
                }
                
                if (sprite_index == spr_robot_destroy){
-                  show_debug_message(i);
+                  //show_debug_message(i);
                   i += 1*gspeed;
                   image_speed +=0.005*gspeed;
                   if (i &gt;=100){

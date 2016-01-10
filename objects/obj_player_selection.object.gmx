@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -25,17 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed = 0.1;
-if (instance_find(obj_input,0)){   
-    y = obj_input.y-20;
-    x = obj_input.x-45;
-}
-xtarget = x;
-ytarget = y;
-speed = 0;
-
-
-
+            <string>global.playerSelect = 0;
 </string>
           </argument>
         </arguments>
@@ -58,24 +48,17 @@ speed = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///pause
-if (global.pause){
-   image_speed = 0;
-   speed = 0;
-}
-else{
-     image_speed = 0.1;
-     move_towards_point(xtarget, ytarget, 10);
-     if (speed!= 0 ){
-        sprite_index = spr_character_walk;
-     }
-
-     if (point_distance(x, y, xtarget, ytarget) &lt; speed){
-        speed = 0;
-        x = xtarget;
-        y = ytarget;
-        sprite_index = spr_character;
-     }   
+            <string>if (instance_exists(obj_player)){
+   if (global.playerSelect == 1){
+       with(obj_player){
+          instance_change(obj_player1,true);
+      }
+   }
+   if (global.playerSelect == 2){
+      with(obj_player){
+          instance_change(obj_player2,true);
+      }
+   }
 }
 </string>
           </argument>
