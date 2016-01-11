@@ -28,6 +28,8 @@
             <string>///init enabled=false
 enabled = false;
 image_speed = 0;
+ani_start = 2;
+ani_end = image_number - 1;
 </string>
           </argument>
         </arguments>
@@ -55,30 +57,38 @@ image_speed = 0;
 if (instance_find(obj_switch,0)){
     if (obj_switch.enabled){  
         if (enabled){
-            image_index = 1;
-            image_blend = make_colour_hsv(random(255), 255,255);
+           image_speed = 0.2;
+           if (image_index &lt; ani_start || floor(image_index) &gt; ani_end) {
+               image_index = ani_start;
+           }
         }
         else{
+            image_speed = 0;
             image_index = 0;
-            image_blend = make_colour_hsv(255, 255,255);
+            //image_blend = make_colour_hsv(255, 255,255);
         }
     }
     else{
+         image_speed = 0;
          image_index = 0;
-         image_blend = make_colour_hsv(255, 255,255);
+        // image_blend = make_colour_hsv(255, 255,255);
     }
     
 }
 else{
-        if (enabled){
-            image_index = 1;
-            image_blend = make_colour_hsv(random(255), 255,255);
-        }
-        else{
-            image_index = 0;
-            image_blend = make_colour_hsv(255, 255,255);
-        }
+    if (enabled){
+       image_speed = 0.2;
+       if (image_index &lt; ani_start || floor(image_index) &gt; ani_end) {
+           image_index = ani_start;
+       }
+       // image_blend = make_colour_hsv(random(255), 255,255);
     }
+    else{
+        image_speed = 0;
+        image_index = 0;
+        //image_blend = make_colour_hsv(255, 255,255);
+    }
+}
 </string>
           </argument>
         </arguments>
