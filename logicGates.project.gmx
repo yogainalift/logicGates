@@ -44,6 +44,8 @@
     <sprite>sprites\spr_character_not_creepy</sprite>
     <sprite>sprites\spr_character_walk</sprite>
     <sprite>sprites\spr_splash</sprite>
+    <sprite>sprites\spr_male</sprite>
+    <sprite>sprites\spr_female</sprite>
     <sprites name="gates_old">
       <sprite>sprites\spr_gate_AND_00_old</sprite>
       <sprite>sprites\spr_gate_AND_01</sprite>
