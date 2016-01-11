@@ -8,6 +8,56 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>playersprite = spr_character_walk;
+xscale = 1; //xscale. to scale larger images
+yscale = 1; //yscale, to scale larger images
+playername = "Dr  Electron"; //selected player's name
+conot = "his";
+
+
+if (global.playerSelect == 1){
+    playersprite = spr_character;
+}
+if (global.playerSelect == 2){
+   playersprite = spr_robot_idle;
+   playername = "Jeeves";
+   conot = "its";
+}
+if (global.playerSelect == 3){
+    playersprite = spr_male;
+    xscale = 0.4; 
+    yscale = 0.4;
+    playername = "Newton";
+}
+if (global.playerSelect == 4){
+   playersprite = spr_female;
+   xscale = 0.4; 
+   yscale = 0.4;
+   playername = "Marie";
+   conot = "her";
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -33,6 +83,8 @@
     audio_play_sound(bgm_button,1,false);
     room_goto_next();
 }
+
+
 </string>
           </argument>
         </arguments>
@@ -63,9 +115,9 @@ w=view_wview[0];
 h=view_hview[0];
 
 draw_set_halign(fa_left);
-draw_text_transformed(150,(h/2)-(2*(h/6)), "Doctor  Electron  wants  to  eat  frozen  pizza, but  his  laboratory  microwave  oven  is  broken!",0.9,0.9,0); 
+draw_text_transformed(150,(h/2)-(2*(h/6)), playername + "  wants  to  eat  frozen  pizza  but  " + conot + "  pizza  robot  butler  is  broken!",0.9,0.9,0); 
 draw_set_halign(fa_right);
-draw_sprite(spr_character,1,100,(h/2)-(2*(h/6)));
+draw_sprite_ext(playersprite,1,100,(h/2)-(2*(h/6)),xscale,yscale,0,c_white,1);
 draw_set_halign(fa_left);
 draw_text_transformed(150,(h/2)-(h/6), "Fortunately  he  studied  at  the  Tue  so  he  knows  how  electric  circuits  work.",0.9,0.9,0);
 draw_set_halign(fa_right);
@@ -82,7 +134,7 @@ draw_set_halign(fa_left);
 draw_text_transformed(150,(h/2)+(2*(h/6)), "Try  to  power  the  gates  to  restore  power  to  the  outputs  and  help  Doctor  Electron  ",0.9,0.9,0);
 draw_text_transformed(150,(h/2)+(2*(h/6)+40),"satisfy  his  hunger  for  pizza!",0.9,0.9,0); 
 draw_set_halign(fa_right);
-draw_sprite(spr_output,1,100,(h/2)+(2*(h/6)));
+draw_sprite(spr_robot_walk,1,100,(h/2)+(2*(h/6)));
 draw_set_halign(fa_center);
 draw_text_transformed(w/2,(h/2)+(2*(h/6)+100),"Lect  click  to  continue",1,1,0); 
 

@@ -72,9 +72,9 @@
    }
 }
 
-if (room == tutorial){
-   instance_destroy();
-}
+//if (room == tutorial){
+   //instance_deactivate_object(obj_player);
+//}
 </string>
           </argument>
         </arguments>
