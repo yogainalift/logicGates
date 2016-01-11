@@ -43,7 +43,7 @@ globalvar g_inst;  // drag 1 at a time
 global.g_inst = noone;
 
 inBox = 0; // id of the box this gate is in, used for swapping gates with another box
-
+counter = 1;
 
 </string>
           </argument>
