@@ -31,7 +31,54 @@ global.iscompletesound=false; //play lvl complete sound
 checkNow = true;
 chimeenabled=true; //used to play lvl complete sound only once
 global.scoreon=true; //to enable the score to change
+donewait = false; //used to wait x amount of time before a player can continue to the next level
+waittime = 5;// amount of time to wait before player can continue to the next level
+alarm[0] = 150; //set alarm to 5s
 
+//promotional content array. one shown at level complete screen at random
+promotion[0] = "At  the  TUe  you  will  develop  knowledge  #and  skills  that  you  can  use  for  the  #rest  of  your  career!";
+promotion[1] = "At  the  Tue  you  will  learn  how  to  apply #knowledge  and  skills  in  order  to  solve  #problems  by  working  in  a  team  of  #fellow  students  on  projects ";
+promotion[2] = "Various  team projects  at the  TUE  include  #computer  game  design  hospital  information  #systems  artificial  intelligence  #software  and  robot  building.";
+promotion[3] = "the  TUE  is  one  of  Europe's  top  universities!";
+promotion[4] = "Eindhoven  forms  the  hub  of  Europe's  most # important  high-tech  regions!";
+promotion[5] = "Approximately  50  percent  of  research  and  development  #conducted  in  the  Netherlands  takes  place  #within  the  Eindhoven  region!";
+promotion[6] = "Eindhoven  is  home  to  companies  and  organizations  #such  as  ASML  Philips  TNO  and  the  #High  Tech  Campus!";
+promotion[7] = "The  tue  is  located  near  the  railway  station  #and  shopping/entertainment  center";
+promotion[8] = "The  tue  currently  has  over  3000  employees  #33  percent  of  which  are  internationals!";
+promotion[9] = "The  tue  has  over  2000  academic  staff!";
+
+promotiontext = promotion[random(array_length_1d(promotion))]; //gets a random promotional text
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(donewait==false &amp;&amp; waittime != 0){
+    waittime -= 1;  //decrease score by 30    
+}
+else if(donewait==false &amp;&amp; waittime == 0){
+    donewait = true;
+}
+
+alarm[0] = 150; //set alarm back to 5 seconds
 </string>
           </argument>
         </arguments>
@@ -57,7 +104,7 @@ global.scoreon=true; //to enable the score to change
             <string>if (global.pause) exit;
 if (instance_exists(obj_output) &amp;&amp; checkNow){
     if (global.count_of_enabled == instance_number(obj_output)){
-        global.completecheck=true; 
+        global.completecheck=true;
         //global.iscompletesound=false;
         if (!audio_is_playing(bgm_chime) &amp;&amp; chimeenabled==true){
             audio_play_sound(bgm_chime,1,false);
@@ -66,12 +113,15 @@ if (instance_exists(obj_output) &amp;&amp; checkNow){
             global.scoreon=false;
         }
     }
-    if ((keyboard_check_pressed(vk_space) || mouse_check_button_pressed(mb_left))&amp;&amp; global.completecheck==true){
+    if ((keyboard_check_pressed(vk_space) || mouse_check_button_pressed(mb_left))&amp;&amp; global.completecheck==true &amp;&amp; donewait==true){
         global.completecheck=false;
         global.count_of_enabled = 0;
         chimeenabled = true;    
         score=20000; //reset score
+        promotiontext = promotion[random(array_length_1d(promotion))]; //gets a random promotional text
         global.scoreon=true;
+        donewait=false;
+        waittime=5;
         audio_play_sound(bgm_button,1,false);
         room_goto_next();    
     }
@@ -109,6 +159,8 @@ if (instance_exists(obj_output) &amp;&amp; checkNow){
     draw_set_alpha(1);
     w=view_wview[0];
     h=view_hview[0];
+    draw_text(w/2, (h/2)-(h/3), string(promotiontext));
+    draw_text(w/2, (h/2)-(h/6), "You  can  continue  in  " + string(waittime) + "  seconds");
     draw_text(w/2,h/2+h/6, "Score  " + string(score));
     draw_text_transformed(w/2, h/2+h/4, "Level Complete",2 ,2 ,image_angle);
     draw_text(w/2,h/2+h/3, "Left   Click  to  continue");
