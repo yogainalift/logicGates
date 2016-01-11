@@ -41,6 +41,8 @@ setX = x;  // store initial x
 setY = y;  // store initial y
 
 inBox = 0; // id of the box this gate is in, used for swapping gates with another box
+
+
 </string>
           </argument>
         </arguments>

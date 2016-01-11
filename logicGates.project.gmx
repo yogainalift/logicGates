@@ -162,6 +162,7 @@
     <object>objects\obj_robot</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\room_test_full</room>
     <room>rooms\main_menu_select</room>
     <room>rooms\tutorial</room>
     <room>rooms\room1</room>
@@ -174,7 +175,6 @@
     <room>rooms\room8</room>
     <room>rooms\room9</room>
     <room>rooms\room10</room>
-    <room>rooms\room_test_full</room>
     <room>rooms\end_game</room>
     <room>rooms\main_menu</room>
     <rooms name="test">
