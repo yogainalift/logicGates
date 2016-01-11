@@ -75,6 +75,17 @@ if (input1 || input2){
         changed = !changed;
     }
 }
+//counter
+var inst = noone;
+inst = instance_place(x, y, obj_OR);
+s = string(inst);
+while( (inst != noone))
+{
+instance_deactivate_object(inst);
+counter++;
+inst = instance_place(x, y, obj_OR);
+}
+instance_activate_all();
 </string>
           </argument>
         </arguments>
@@ -98,18 +109,6 @@ if (input1 || input2){
           <argument>
             <kind>1</kind>
             <string>///counter
-counter = 1;
-var inst = noone;
-inst = instance_place(x, y, obj_OR);
-s = string(inst);
-while( (inst != noone))
-{
-instance_deactivate_object(inst);
-counter++;
-inst = instance_place(x, y, obj_OR);
-}
-instance_activate_all();
-
 c = string(counter);  // turn the number into string
 // if it is not colliding with gates don't draw
 if (counter != 1)
@@ -117,6 +116,7 @@ if (counter != 1)
     draw_text(x, y+17, c);
 }
 draw_self();
+counter = 1;
 </string>
           </argument>
         </arguments>
