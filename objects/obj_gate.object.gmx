@@ -39,6 +39,8 @@ xx = 0;
 yy = 0;
 setX = x;  // store initial x
 setY = y;  // store initial y
+globalvar g_inst;  // drag 1 at a time
+global.g_inst = noone;
 
 inBox = 0; // id of the box this gate is in, used for swapping gates with another box
 
@@ -129,15 +131,29 @@ if (global.pause||global.completecheck) exit;
             <kind>1</kind>
             <string>/// drag
 if (global.pause) exit;
-
-if (grab == false)
+if (global.g_inst != noone)
 {
-    exit;
+    if (global.g_inst.grab == false)
+    {
+        exit;
+    }
+    else
+    {
+      global.g_inst.x = mouse_x + xx;
+      global.g_inst.y = mouse_y + yy;
+    }
 }
 else
 {
-    x = mouse_x + xx;
-    y = mouse_y + yy;
+    if (grab == false)
+    {
+         exit;
+    }
+    else
+    {
+        x = mouse_x + xx;
+        y = mouse_y + yy;
+    }
 }
 </string>
           </argument>
@@ -163,7 +179,14 @@ else
             <kind>1</kind>
             <string>///position settings
 if (global.pause||global.completecheck) exit;
-grab = false;
+if (global.g_inst != noone)
+{
+    global.g_inst.grab = false;
+}
+else
+{
+    grab = false;
+}
 
 if (inBox == 0){ //was not in  a box
     inst = instance_place(x, y, obj_box);
@@ -281,12 +304,26 @@ flag = false;
             <kind>1</kind>
             <string>///drag
 if (global.pause||global.completecheck) exit;
-grab = true;
-depth = -20;
-//get relative click position
-xx = x - mouse_x;
-yy = y - mouse_y;
 
+global.g_inst = instance_place(x, y, obj_gate);
+if(global.g_inst != noone)
+{
+    global.g_inst.grab = true;
+    global.g_inst.depth = -20;
+
+    //get relative click position
+    xx = global.g_inst.x - mouse_x;
+    yy = global.g_inst.y - mouse_y;
+}
+else
+{
+    grab = true;
+    depth = -20;
+
+    //get relative click position
+    xx = x - mouse_x;
+    yy = y - mouse_y;
+}
 
 //check if was allready in a box
 var inst = instance_place(x, y, obj_box);
