@@ -176,12 +176,10 @@
     <room>rooms\room8</room>
     <room>rooms\room9</room>
     <room>rooms\room10</room>
-    <room>rooms\room_test_full</room>
     <room>rooms\end_game</room>
+    <room>rooms\room_test_full</room>
     <room>rooms\main_menu</room>
-    <rooms name="test">
-      <room>rooms\room_test_gate_swapping</room>
-    </rooms>
+    <room>rooms\room_test_gate_swapping</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
