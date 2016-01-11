@@ -37,6 +37,7 @@
     <sprite>sprites\spr_robot_destroy</sprite>
     <sprite>sprites\spr_robot_destroy2</sprite>
     <sprite>sprites\spr_box</sprite>
+    <sprite>sprites\spr_inv</sprite>
     <sprite>sprites\spr_player_box</sprite>
     <sprite>sprites\spr_character</sprite>
     <sprite>sprites\spr_character_creepier</sprite>
@@ -135,6 +136,7 @@
     <object>objects\obj_switch</object>
     <object>objects\obj_output</object>
     <object>objects\obj_box</object>
+    <object>objects\obj_inv</object>
     <object>objects\obj_input</object>
     <objects name="characters">
       <object>objects\obj_player1</object>
@@ -164,6 +166,7 @@
     <object>objects\obj_robot</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\room_test_full</room>
     <room>rooms\main_menu_select</room>
     <room>rooms\tutorial</room>
     <room>rooms\room1</room>
@@ -178,7 +181,6 @@
     <room>rooms\room10</room>
     <room>rooms\end_game</room>
     <room>rooms\main_menu</room>
-    <room>rooms\room_test_full</room>
     <room>rooms\room_test_gate_swapping</room>
   </rooms>
   <help>

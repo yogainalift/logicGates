@@ -304,7 +304,7 @@ flag = false;
             <kind>1</kind>
             <string>///drag
 if (global.pause||global.completecheck) exit;
-
+if (instance_place(x,y,obj_inv)) || instance_place(x,y,obj_box){
 global.g_inst = instance_place(x, y, obj_gate);
 if(global.g_inst != noone)
 {
@@ -333,7 +333,7 @@ if (inst != noone &amp;&amp; inBox ==0){
 //  show_debug_message("object inside box: "+string(inBox.object_inside));
 //  show_debug_message("self id: "+string(self.id));
 }
-
+}
 </string>
           </argument>
         </arguments>
