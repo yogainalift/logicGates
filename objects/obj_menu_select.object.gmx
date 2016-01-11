@@ -48,7 +48,7 @@ h=view_hview[0];
         <arguments>
           <argument>
             <kind>6</kind>
-            <sound>bgm_menu</sound>
+            <sound>-100</sound>
           </argument>
           <argument>
             <kind>3</kind>
@@ -74,7 +74,7 @@ h=view_hview[0];
         <arguments>
           <argument>
             <kind>6</kind>
-            <sound>bgm_menu</sound>
+            <sound>-100</sound>
           </argument>
         </arguments>
       </action>
@@ -94,7 +94,7 @@ h=view_hview[0];
         <arguments>
           <argument>
             <kind>6</kind>
-            <sound>bgm_ingame1</sound>
+            <sound>-100</sound>
           </argument>
           <argument>
             <kind>3</kind>

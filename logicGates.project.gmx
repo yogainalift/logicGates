@@ -143,8 +143,12 @@
     <objects name="characters">
       <object>objects\obj_player1</object>
       <object>objects\obj_player2</object>
+      <object>objects\obj_player3</object>
+      <object>objects\obj_player4</object>
       <object>objects\obj_select1</object>
       <object>objects\obj_select2</object>
+      <object>objects\obj_select3</object>
+      <object>objects\obj_select4</object>
       <object>objects\obj_player_selection</object>
       <object>objects\obj_menu_select</object>
       <object>objects\obj_player</object>
@@ -168,7 +172,6 @@
     <object>objects\obj_robot</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room_test_full</room>
     <room>rooms\main_menu_select</room>
     <room>rooms\tutorial</room>
     <room>rooms\room1</room>
@@ -183,6 +186,7 @@
     <room>rooms\room10</room>
     <room>rooms\end_game</room>
     <room>rooms\main_menu</room>
+    <room>rooms\room_test_full</room>
     <room>rooms\room_test_gate_swapping</room>
   </rooms>
   <help>

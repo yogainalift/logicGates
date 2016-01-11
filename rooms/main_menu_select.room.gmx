@@ -54,11 +54,15 @@
     <instance objName="obj_pause" x="32" y="96" name="inst_0CEBF307" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_nextlevel" x="64" y="96" name="inst_AC22103E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_menu_select" x="96" y="96" name="inst_D82EC729" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_select1" x="480" y="368" name="inst_ECC4BC15" locked="0" code="" scaleX="1.70000004768372" scaleY="1.70000004768372" colour="4294967295" rotation="0"/>
-    <instance objName="obj_select2" x="743" y="409" name="inst_C24BBEE2" locked="0" code="" scaleX="3.5" scaleY="3.5" colour="4294967295" rotation="0"/>
+    <instance objName="obj_select1" x="192" y="368" name="inst_ECC4BC15" locked="0" code="" scaleX="1.70000004768372" scaleY="1.70000004768372" colour="4294967295" rotation="0"/>
+    <instance objName="obj_select2" x="462" y="408" name="inst_C24BBEE2" locked="0" code="" scaleX="3.73000001907349" scaleY="3.60999989509583" colour="4294967295" rotation="0"/>
     <instance objName="obj_player_selection" x="128" y="96" name="inst_FA2F729C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_player_box" x="480" y="368" name="inst_54CA88EE" locked="0" code="" scaleX="3.08333325386047" scaleY="2.33333325386047" colour="4294967295" rotation="0"/>
-    <instance objName="obj_player_box" x="742" y="369" name="inst_22D4551B" locked="0" code="" scaleX="3.08333325386047" scaleY="2.33333325386047" colour="4294967295" rotation="0"/>
+    <instance objName="obj_player_box" x="191" y="364" name="inst_54CA88EE" locked="0" code="" scaleX="3.08333325386047" scaleY="2.33333325386047" colour="4294967295" rotation="0"/>
+    <instance objName="obj_player_box" x="461" y="363" name="inst_22D4551B" locked="0" code="" scaleX="3.08333325386047" scaleY="2.33333325386047" colour="4294967295" rotation="0"/>
+    <instance objName="obj_player_box" x="742" y="368" name="inst_4F5439B7" locked="0" code="" scaleX="3.08333325386047" scaleY="2.33333325386047" colour="4294967295" rotation="0"/>
+    <instance objName="obj_player_box" x="1000" y="365" name="inst_15D98819" locked="0" code="" scaleX="3.08333325386047" scaleY="2.33333325386047" colour="4294967295" rotation="0"/>
+    <instance objName="obj_select3" x="746" y="359" name="inst_D5F3426D" locked="0" code="" scaleX="0.800000011920929" scaleY="0.800000011920929" colour="4294967295" rotation="0"/>
+    <instance objName="obj_select4" x="1001" y="364" name="inst_157733C8" locked="0" code="" scaleX="0.800000011920929" scaleY="0.800000011920929" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

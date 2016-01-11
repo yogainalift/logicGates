@@ -59,6 +59,21 @@
           instance_change(obj_player2,true);
       }
    }
+   if (global.playerSelect == 3){
+      with(obj_player){
+          instance_change(obj_player3,true);
+          show_debug_message("asda");
+      }
+   }
+   if (global.playerSelect == 4){
+      with(obj_player){
+          instance_change(obj_player4,true);
+      }
+   }
+}
+
+if (room == tutorial){
+   instance_destroy();
 }
 </string>
           </argument>

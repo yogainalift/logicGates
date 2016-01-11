@@ -49,15 +49,26 @@ enabled = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (enabled){
-enabled = 0;
-image_index = 0;
-}else{
+            <string>///stuff
+if (global.pause||global.completecheck) exit;
 
-enabled = 1;
-image_index = 1;
+if (enabled){
+    enabled = 0;
+    image_index = 0;
+    audio_stop_sound(bgm_switch1);
+    audio_play_sound(bgm_switch2,1,false);
+}
+else{
+    audio_stop_sound(bgm_switch2);
+    audio_play_sound(bgm_switch1,1,false);
+    enabled = 1;
+    image_index = 1;
 }
 
+if (instance_find(obj_player,0)){
+   obj_player.xtarget = x-45;
+   obj_player.ytarget = y-10;
+}
 </string>
           </argument>
         </arguments>
