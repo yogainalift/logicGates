@@ -162,6 +162,26 @@ if (instance_find(obj_switch,0)){
              }
         }
     }
+}else{
+      if (other.enabled){
+            if (!flag){    //false
+                enabled = true;
+                global.count_of_enabled += 1;
+                image_speed = 1/8;
+                flag = !flag;   //flag = true
+                sprite_index = spr_robot_idle;
+            }
+        
+        }  
+        else {
+             if (flag){
+                enabled = false;
+                global.count_of_enabled -= 1;
+                flag = !flag;   
+                image_speed = 0;
+                sprite_index = spr_robot_not_ready;
+             }
+        }
 }
 </string>
           </argument>

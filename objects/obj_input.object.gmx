@@ -59,35 +59,68 @@ ytarget = 0;
             <kind>1</kind>
             <string>///set true on click
 if (global.pause||global.completecheck) exit;
-if (!output){
-    output = true;
-    image_index = 0;
-    image_blend = make_colour_hsv(80, 240, 250);
-    enable_wire(wire);
-    if (instance_find(obj_player,0)){
-       obj_player.xtarget = x-45;
-       obj_player.ytarget = y-20;
- //      obj_player.y = y-20;
- //     obj_player.x = x-45;
+if (instance_find(obj_switch,0)){
+    if (!obj_switch.enabled){  
+        if (!output){
+            output = true;
+            image_index = 0;
+            image_blend = make_colour_hsv(80, 240, 250);
+            enable_wire(wire);
+            if (instance_find(obj_player,0)){
+               obj_player.xtarget = x-45;
+               obj_player.ytarget = y-20;
+         //      obj_player.y = y-20;
+         //     obj_player.x = x-45;
+            }
+            audio_stop_sound(bgm_switch2);
+            audio_play_sound(bgm_switch1,1,false);
+        } 
+        else {
+            output = false;
+            image_index = 1;
+            image_blend = make_colour_hsv(255, 240, 250);
+            disable_wire(wire);
+            if (instance_find(obj_player,0)){
+                 obj_player.xtarget = x-45;
+               obj_player.ytarget = y-20;
+           //    obj_player.y = y-20;
+           //    obj_player.x = x-45;
+            }
+            audio_stop_sound(bgm_switch1);
+            audio_play_sound(bgm_switch2,1,false);
+        }
     }
-    audio_stop_sound(bgm_switch2);
-    audio_play_sound(bgm_switch1,1,false);
-} 
-else {
-    output = false;
-    image_index = 1;
-    image_blend = make_colour_hsv(255, 240, 250);
-    disable_wire(wire);
-    if (instance_find(obj_player,0)){
-         obj_player.xtarget = x-45;
-       obj_player.ytarget = y-20;
-   //    obj_player.y = y-20;
-   //    obj_player.x = x-45;
-    }
-    audio_stop_sound(bgm_switch1);
-    audio_play_sound(bgm_switch2,1,false);
 }
-
+else{
+     if (!output){
+            output = true;
+            image_index = 0;
+            image_blend = make_colour_hsv(80, 240, 250);
+            enable_wire(wire);
+            if (instance_find(obj_player,0)){
+               obj_player.xtarget = x-45;
+               obj_player.ytarget = y-20;
+         //      obj_player.y = y-20;
+         //     obj_player.x = x-45;
+            }
+            audio_stop_sound(bgm_switch2);
+            audio_play_sound(bgm_switch1,1,false);
+        } 
+        else {
+            output = false;
+            image_index = 1;
+            image_blend = make_colour_hsv(255, 240, 250);
+            disable_wire(wire);
+            if (instance_find(obj_player,0)){
+                 obj_player.xtarget = x-45;
+               obj_player.ytarget = y-20;
+           //    obj_player.y = y-20;
+           //    obj_player.x = x-45;
+            }
+            audio_stop_sound(bgm_switch1);
+            audio_play_sound(bgm_switch2,1,false);
+        }
+}
 </string>
           </argument>
         </arguments>

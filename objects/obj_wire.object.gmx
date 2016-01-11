@@ -63,8 +63,22 @@ if (instance_find(obj_switch,0)){
             image_blend = make_colour_hsv(255, 255,255);
         }
     }
+    else{
+         image_index = 0;
+         image_blend = make_colour_hsv(255, 255,255);
+    }
+    
 }
-
+else{
+        if (enabled){
+            image_index = 1;
+            image_blend = make_colour_hsv(random(255), 255,255);
+        }
+        else{
+            image_index = 0;
+            image_blend = make_colour_hsv(255, 255,255);
+        }
+    }
 </string>
           </argument>
         </arguments>
