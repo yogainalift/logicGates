@@ -78,7 +78,8 @@ alarm[0] = 30; //set alarm back to 1 second
             <string>draw_set_font(Arcade);
 draw_set_color(c_white);
 
-draw_text(400,12,score);  //draw the score at the coordinates 250,10
+//uncomment to debug
+//draw_text(400,12,score);  //draw the score at the coordinates 250,10
 </string>
           </argument>
         </arguments>
