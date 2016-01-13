@@ -167,6 +167,7 @@
       <object>objects\obj_nextlevel</object>
       <object>objects\obj_countdown_score</object>
       <object>objects\obj_tutorial</object>
+      <object>objects\obj_charnames</object>
     </objects>
     <object>objects\level_settings</object>
     <object>objects\obj_robot</object>

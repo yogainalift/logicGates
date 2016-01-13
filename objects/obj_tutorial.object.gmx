@@ -37,7 +37,7 @@ if (global.playerSelect == 1){
 }
 if (global.playerSelect == 2){
    playersprite = spr_robot_idle;
-   playername = "Jeeves";
+   playername = "Norbit";
    conot = "its";
 }
 if (global.playerSelect == 3){
