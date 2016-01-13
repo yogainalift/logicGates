@@ -63,6 +63,7 @@
     <instance objName="obj_output" x="528" y="240" name="inst_EA3044A5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_NOT" x="432" y="240" name="inst_66F1023F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="level_settings" x="192" y="112" name="inst_B7F6333B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_switch" x="304" y="352" name="inst_4D6A53F5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
