@@ -138,6 +138,7 @@
     </objects>
     <object>objects\obj_switch</object>
     <object>objects\obj_output</object>
+    <object>objects\obj_robot</object>
     <object>objects\obj_box</object>
     <object>objects\obj_inv</object>
     <object>objects\obj_input</object>
@@ -171,14 +172,11 @@
       <object>objects\obj_charnames</object>
     </objects>
     <object>objects\level_settings</object>
-    <object>objects\obj_robot</object>
+    <object>objects\obj_endgame</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\main_menu_select</room>
     <room>rooms\tutorial</room>
-    <room>rooms\room11</room>
-    <room>rooms\room12</room>
-    <room>rooms\room13</room>
     <room>rooms\room1</room>
     <room>rooms\room2</room>
     <room>rooms\room3</room>
@@ -189,11 +187,13 @@
     <room>rooms\room8</room>
     <room>rooms\room9</room>
     <room>rooms\room10</room>
+    <room>rooms\room11</room>
+    <room>rooms\room12</room>
+    <room>rooms\room13</room>
     <room>rooms\end_game</room>
-    <room>rooms\main_menu</room>
     <room>rooms\room_test_full</room>
     <room>rooms\room_test_gate_swapping</room>
-    <room>rooms\room20</room>
+    <room>rooms\main_menu</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
