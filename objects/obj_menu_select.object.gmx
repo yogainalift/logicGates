@@ -125,7 +125,7 @@ draw_set_valign(fa_middle);
 draw_set_font(Arcade);
 draw_set_color(c_white);
 //draw_text(w/2,(h/2)+(2*(h/6)), "Select   Player  to  Start");
-draw_text_transformed(w/2,(h/2)-(h/3),"robot    gates",5,5,0);
+draw_text_transformed(w/2,(h/2)-(h/3),"robogates",5,5,0);
 draw_text_transformed(w/2,(h/2)+(2*(h/6)),"Select   character  to  Start",2,2,0);
 </string>
           </argument>
