@@ -139,7 +139,11 @@ else{
             <kind>1</kind>
             <string>///change color
 if (global.pause||global.completecheck) exit;
-
+with (obj_box){
+   if (object_inside==0){
+      exit;
+   }
+}
 if (instance_find(obj_switch,0)){
     if (obj_switch.enabled){
         if (other.enabled){
