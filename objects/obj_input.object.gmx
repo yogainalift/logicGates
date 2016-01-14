@@ -35,6 +35,7 @@ global.p_x = 0;
 global.p_y = 0;
 xtarget = 0;
 ytarget = 0;
+static = 0;
 </string>
           </argument>
         </arguments>
@@ -58,7 +59,7 @@ ytarget = 0;
           <argument>
             <kind>1</kind>
             <string>///set true on click
-if (global.pause||global.completecheck) exit;
+if (global.pause||global.completecheck || static) exit;
 if (instance_find(obj_switch,0)){
     if (!obj_switch.enabled){  
         if (!output){

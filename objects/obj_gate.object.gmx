@@ -304,6 +304,11 @@ flag = false;
             <kind>1</kind>
             <string>///drag
 if (global.pause||global.completecheck) exit;
+if (instance_find(obj_switch,0)){
+    if (obj_switch.enabled){
+       exit;
+    }
+}
 if (instance_place(x,y,obj_inv)) || instance_place(x,y,obj_box){
 global.g_inst = instance_place(x, y, obj_gate);
 if(global.g_inst != noone)

@@ -98,6 +98,7 @@
     <script>scripts\scr_menu.gml</script>
     <script>scripts\set_input_true.gml</script>
     <script>scripts\move_to_center.gml</script>
+    <script>scripts\script6.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shader0.shader</shader>
@@ -177,6 +178,7 @@
     <room>rooms\tutorial</room>
     <room>rooms\room11</room>
     <room>rooms\room12</room>
+    <room>rooms\room13</room>
     <room>rooms\room1</room>
     <room>rooms\room2</room>
     <room>rooms\room3</room>
