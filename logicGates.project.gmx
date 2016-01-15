@@ -13,6 +13,7 @@
     <sound>sound\bgm_switch1</sound>
     <sound>sound\bgm_chime</sound>
     <sound>sound\bgm_button</sound>
+    <sound>sound\bgm_fail</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="gates">

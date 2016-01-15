@@ -115,7 +115,6 @@
     <instance objName="obj_wire_bl" x="576" y="208" name="inst_D9ECE033" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wire_line" x="544" y="240" name="inst_0DAFA1E6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wire_line" x="576" y="240" name="inst_9B3DA089" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="&lt;undefined&gt;" x="0" y="0" name="inst_6E40DD36" locked="0" code="" scaleX="0" scaleY="0" colour="0" rotation="0"/>
     <instance objName="obj_wire_tr" x="480" y="128" name="inst_47190C61" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wire_bl" x="480" y="144" name="inst_F55ABDD1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_NOT" x="416" y="224" name="inst_0C44C198" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

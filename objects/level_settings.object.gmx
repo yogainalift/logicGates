@@ -95,11 +95,11 @@ else if (room == room12){
      set_input_true(4);
      set_input_true(5);
      set_input_true(6);
-     
+     /*
      with(obj_input){
          static = true;
          
-     }
+     }*/
 }
 else if (room == room13){
      set_input_true(3);
