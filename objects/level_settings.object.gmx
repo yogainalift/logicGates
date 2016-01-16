@@ -106,9 +106,34 @@ else if (room == room13){
      set_input_true(4);
          set_input_true(6);
 }
-else{
-//dosomething
+else if (room == room14){
+     set_input_true(1);
+     set_input_true(2);
 }
+else if (room == room15){
+     set_input_true(1);
+     set_input_true(2);
+}
+else if (room == room16){
+     set_input_true(1);
+}
+else if (room == room17){
+     set_input_true(1);
+     set_input_true(2);
+}
+else if (room == room18){
+     set_input_true(1);
+     set_input_true(2);
+     set_input_true(3);
+     set_input_true(4);
+     set_input_true(6);
+}
+else if (room == room19){
+     set_input_true(3);
+     set_input_true(4);
+     set_input_true(6);
+}
+else {}
 </string>
           </argument>
         </arguments>

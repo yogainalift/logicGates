@@ -113,7 +113,7 @@ c = string(counter);  // turn the number into string
 // if it is not colliding with gates don't draw
 if (counter != 1)
 {
-    draw_text(x, y+17, c);
+    draw_text(x, y+25, c);
 }
 draw_self();
 counter = 1;
