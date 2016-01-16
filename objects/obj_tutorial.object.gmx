@@ -30,6 +30,7 @@ xscale = 1; //xscale. to scale larger images
 yscale = 1; //yscale, to scale larger images
 playername = "Dr  Electron"; //selected player's name
 conot = "his";
+conot2 = "he";
 
 
 if (global.playerSelect == 1){
@@ -52,6 +53,7 @@ if (global.playerSelect == 4){
    yscale = 0.4;
    playername = "Marie";
    conot = "her";
+   conot2 = "she";
 }
 </string>
           </argument>
@@ -120,11 +122,11 @@ draw_text_transformed(150,(h/2)-(3*(h/8))+20,"butler  is  broken!",0.9,0.9,0);
 draw_set_halign(fa_right);
 draw_sprite_ext(playersprite,1,100,(h/2)-(3*(h/8)),xscale,yscale,0,c_white,1);
 draw_set_halign(fa_left);
-draw_text_transformed(150,(h/2)-(2*(h/8)), "Fortunately  he  studied  at  the  Tue  so  he  knows  how  electric  circuits  work.",0.9,0.9,0);
+draw_text_transformed(150,(h/2)-(2*(h/8)), "Fortunately  " + conot2 + "  studied  at  the  Tue  so  he  knows  how  electric  circuits  work.",0.9,0.9,0);
 draw_set_halign(fa_right);
 draw_sprite_ext(spr_tue,1,100,(h/2)-(2*(h/8)),0.1,0.1,0,c_white,1);
 draw_set_halign(fa_left);
-draw_text_transformed(150,(h/2)-(h/8), "By  clicking  on  an  input  switch  he  can  enable  or  disable  it  to  give  power  to  a  wire.",0.9,0.9,0);
+draw_text_transformed(150,(h/2)-(h/8), "By  clicking  on  an  input  switch  you  can  enable  or  disable  it  to  give  power  to  a  wire.",0.9,0.9,0);
 draw_set_halign(fa_right);
 draw_sprite(spr_input,1,100,(h/2)-(h/8));
 draw_set_halign(fa_left);
