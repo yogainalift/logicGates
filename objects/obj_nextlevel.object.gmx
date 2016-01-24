@@ -31,9 +31,9 @@ global.iscompletesound=false; //play lvl complete sound
 checkNow = true;
 chimeenabled=true; //used to play lvl complete sound only once
 global.scoreon=true; //to enable the score to change
-donewait = true; //used to wait x amount of time before a player can continue to the next level
-waittime = 0;// amount of time to wait before player can continue to the next level
-alarm[0] = 150; //set alarm to 5s
+donewait = false; //used to wait x amount of time before a player can continue to the next level
+waittime = 3;// amount of time to wait before player can continue to the next level
+alarm[0] = 90; //set alarm to 3s
 
 //promotional content array. one shown at level complete screen at random
 promotion[0] = "At  the  TUe  you  will  develop  knowledge  #and  skills  that  you  can  use  for  the  #rest  of  your  career!";
@@ -78,7 +78,7 @@ else if(donewait==false &amp;&amp; waittime == 0){
     donewait = true;
 }
 
-alarm[0] = 150; //set alarm back to 5 seconds
+alarm[0] = 90; //set alarm back to 3 seconds
 </string>
           </argument>
         </arguments>
@@ -120,8 +120,8 @@ if (instance_exists(obj_output) &amp;&amp; checkNow){
         score=20000; //reset score
         promotiontext = promotion[random(array_length_1d(promotion))]; //gets a random promotional text
         global.scoreon=true;
-        donewait=true;
-        waittime=0;
+        donewait=false;
+        waittime=3;
         audio_play_sound(bgm_button,1,false);
         room_goto_next();    
     }
