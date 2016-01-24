@@ -132,6 +132,7 @@ else if (room == room19){
      set_input_true(6);
 }
 else if (room == room20){
+     set_input_true(2);
      set_input_true(3);
      set_input_true(4);
      set_input_true(6);
